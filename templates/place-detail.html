@@ -1,8 +1,11 @@
 <div class="food-detail info-box food-detail-generic">
     <!--<div id="nav-bar-detail" class = "browser-layout"> <h3 id = "city-name">{{ extras.city }}</h3></div>-->
-    <div style="height:110px;background-image: url('../assets/tree-tapestry.png');background-size: 100%;">
-        <h2 class = "represent">Represent</h2>
+    <div style="background-image: url('../assets/tree-tapestry.png');background-size: 100%;text-align: center;padding:10px 0;">
+        <h1 class = "represent" style = "background-color: rgba(32,46,84,0.4);">Represent</h1>
     </div>
+    <h2 class="food-name browser-layout">
+        {{ name }} - <span class = "light">{{ extras.price }}</span>
+    </h2>
     <div class="photo-container" style="background-image: url('{{ path_medium }}');">
     </div>
     <div id="social-media-comment">
@@ -10,10 +13,7 @@
             <h2 class = "food-name">
                 {{ name }} - <span class = "light">{{ extras.price }}</span>
             </h2>
-        </a>
-        <h2 class="food-name browser-layout">
-            {{ name }} - <span class = "light">{{ extras.price }}</span>
-        </h2>
+        </a><!--
         <p id="social-media-handle" class="browser-layout">
             {{#ifequal extras.source "twitter"}}
                 <i class="fa fa-twitter"></i>
@@ -24,12 +24,12 @@
                 <i class="fa fa-instagram dark"></i>
                 <a target="_blank" href="https://instagram.com/{{ extras.handle }}">@{{ extras.handle }}</a>
             {{/ifequal}}
-        </p>
+        </p>-->
         <!-- Three curly braces if you don't want to escape HTML -->
         <p class="food-description browser-layout">
             "{{{ caption }}}"
             <br><br>
-            <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
+            <!--<a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>-->
         </p>
         <div class="nav">
             <a class="carousel-control left previous-place" href="#" data-slide="prev">&lsaquo;</a>

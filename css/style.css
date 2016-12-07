@@ -19,6 +19,12 @@ src: url("../fonts/ProximaNovaExtrabold.otf") format("opentype");
 font-weight: bold;
 }
 
+@font-face {
+    font-family: RoundedElegance;
+    src: url("../fonts/Rounded_Elegance_4.ttf");
+}
+
+
 /**************************** Generic Tag Styles ****************************/
 html, body {
     margin: 0;
@@ -40,28 +46,29 @@ html, body {
 h1 { 
     font-weight: 300;
     color: #fff;
-    font-size: 4.6em;
+    font-size: 28px;
     margin: 20px;
     margin-bottom: 0;
-    font-family:'ProximaNova', sans-serif;
+    font-family:'RoundedElegance', sans-serif;
 }
 
 h1.represent{
     color:white;
     text-shadow: 0 0 3px white;
-    font-family:'ProximaNova';
+    font-family:'RoundedElegance';
     font-size:32px;
     font-weight:300;
     margin:0 auto;
-    padding:30px;
+    padding: 4px 0;
 }
 
 h2 {
     margin: 0;
-    color: #572b2c;
+    color: white;
     font-weight: bold;
     display: inline-block;
-    font-size: 24px;
+    font-size: 36px;
+    font-family:'RoundedElegance', sans-serif;
 }
 
 .about-page h2{
@@ -72,19 +79,10 @@ h2 {
     width: 150px;
     color: white;
     font-weight: 300;
+    font-size: 24pxs;
 }
 
 
-
-h2.splash{
-    margin: 6px 10px;
-    font-weight:400;
-    font-family:'Cubano', sans-serif;
-}
-
-.container>h2{
-    font-size:2em;
-}
 
 h3 {
     padding: 7px 11px 6px;
@@ -120,6 +118,17 @@ p {
     color: #572b2c;
 }
 
+#left-panel fieldset{
+    text-align: center;
+    color:white;
+    border:1px solid white;
+    margin: -36px 20px 30px;
+}
+
+#left-panel legend{
+    font-size:24px;
+}
+
 #home-title{
     margin: 4px 10px;
 }
@@ -142,6 +151,8 @@ img {
 footer{
     padding-top:40px;
     color:#949494;
+    bottom:0px;
+    position:absolute;
 }
 
 #logo {
@@ -163,6 +174,85 @@ footer{
 .hide {
     display: none;
 }
+/*********************************** Splash ***********************************/
+
+.splash-title-container{
+    position: absolute;
+    left: 100px;
+}
+
+.splash-title-container h1{
+    padding: 200px 0 20px;
+    text-shadow: 0 0 0.2em white;
+    border-width:1px;
+    border-style: none solid solid;
+    border-color:white;
+    width: 100%;
+    margin: 0;
+    height: 250px;
+    z-index: 30;
+    position: relative;"
+}
+
+.splash-title-container > div{
+     width:200px;
+     text-align:center;
+}
+
+.splash-title-container h2{
+    width:100%;
+    font-weight:300;
+    background-color: rgba(255,108,0,0.43);
+    z-index: 30;
+    position: relative;
+}
+
+.text-border{
+    border:1px solid white;
+    border-top:none;
+    padding:10px 0;
+    position:relative;
+    z-index:30;
+}
+
+.title-decoration{
+    position:absolute;
+     background-image:url('/assets/title-background.png');
+     background-size: 660px;
+     background-repeat: no-repeat;
+     top: 10px;
+     left: -35px;
+     width: 100vw;
+     height: calc(100vh - 260px);
+     width: calc(100vw - 65px);
+}
+
+@media (max-width: 700px) {
+    .splash-title-container{
+        position: relative;
+        left:0;
+    }
+    .splash-title-container > div{
+        margin:auto;
+    }
+
+    .splash-title-container h1{
+        padding: 100px 0 20px;
+        height: 150px;
+    }
+    .title-decoration{
+         background-image:url('/assets/title-background-m.png');
+         background-size: 260px;
+         background-repeat: no-repeat;
+         top: 10px;
+         width: 100vw;
+         height: 260px;
+         width: 260px;
+    }
+}
+
+
+
 
 /*********************************** Map ***********************************/
 #map {
@@ -184,6 +274,7 @@ footer{
     min-height: 100%;
     background: #FFF;
     z-index: 1000;
+    background-color:#507794;
     background: url('../assets/bridge.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -326,8 +417,6 @@ footer{
     min-height: 400px;
 }
 
-
-
 #search-button {
     cursor: pointer;
     text-decoration: none;
@@ -338,7 +427,7 @@ footer{
     right:33vw;
     bottom:35px;
     box-shadow: 0 0 3px 2px rgba(255,255,255,0.3);
-    font-family:'ProximaNova', sans-serif;
+    font-family:'RoundedElegance', sans-serif;
     background-color:rgba(32,13,4,0.5);
 }
 
@@ -507,9 +596,6 @@ svg {
         width:100%;
         padding-top:80px;
     }
-    h1{
-        font-size:1.6em;
-    }
     .photo-container svg{
         visibility:hidden;
     }
@@ -560,6 +646,11 @@ svg {
     #home-title{
         font-size:1em;
     }
+
+/**New Stuff**/
+    
+
+
 }
 
 
@@ -567,7 +658,6 @@ svg {
 @media (min-width: 1280px) {
     #title-text{
         width:700px;
-        padding-top:;
     }
 }
 
