@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
-
 @font-face {
   font-family: ProximaNova;
   src: url("../../fonts/ProximaNova.otf") format("opentype");
@@ -13,6 +11,11 @@
   font-style: bold;
 }
 
+@font-face{
+    font-family: 'Damion';
+    src: url("../fonts/Damion-Regular.ttf");
+}
+
 @font-face {
 font-family: ProximaNova;
 src: url("../fonts/ProximaNovaExtrabold.otf") format("opentype");
@@ -23,6 +26,7 @@ font-weight: bold;
     font-family: RoundedElegance;
     src: url("../fonts/Rounded_Elegance_4.ttf");
 }
+
 
 
 /**************************** Generic Tag Styles ****************************/
@@ -52,23 +56,33 @@ h1 {
     font-family:'RoundedElegance', sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+
+
 h1.represent{
     color:white;
     text-shadow: 0 0 3px white;
     font-family:'RoundedElegance';
-    font-size:32px;
+    font-size:26xpx;
     font-weight:300;
     margin:0 auto;
     padding: 4px 0;
 }
 
-h2 {
+.splash-title-container h2 {
     margin: 0;
     color: white;
     font-weight: bold;
     display: inline-block;
     font-size: 36px;
     font-family:'RoundedElegance', sans-serif;
+}
+
+.splash-title-container a,
+ .splash-title-container a:visited{
+    color:white;
 }
 
 .about-page h2{
@@ -79,37 +93,11 @@ h2 {
     width: 150px;
     color: white;
     font-weight: 300;
-    font-size: 24pxs;
-}
-
-
-
-h3 {
-    padding: 7px 11px 6px;
-    margin: 0;
-    color: #fff;
-    background-color: #1e9da3;
-    font-family: 'ProximaNova', sans-serif;
-    font-weight: bold;
     font-size: 24px;
 }
 
-h4{
-    color: #1e9da3;
-    font-weight: bold;
-    display: inline-block;
-    font-size: 20px;
-}
-
-
-h4 a{
-    color: #e2495b;
-    font-family: 'Cubano';
-    text-decoration: none;
-    text-shadow: -2px 0 rgba(242,143,59,0.7);
-    font-size:24px;
-    line-height: 1.3;
-    margin:4px;
+.about-page h1{
+    font-size:42px;
 }
 
 p {
@@ -128,20 +116,6 @@ p {
 #left-panel legend{
     font-size:24px;
 }
-
-#home-title{
-    margin: 4px 10px;
-}
-
-#map-title{
-    margin:1px 8px;
-}
-
-.light{
-    font-weight:normal;
-}
-
-a { color: #1e9da3; }
 
 img {
     width: 100%;
@@ -218,10 +192,10 @@ footer{
 .title-decoration{
     position:absolute;
      background-image:url('/assets/title-background.png');
-     background-size: 660px;
+     background-size: 550px;
      background-repeat: no-repeat;
      top: 10px;
-     left: -35px;
+     left: -50px;
      width: 100vw;
      height: calc(100vh - 260px);
      width: calc(100vw - 65px);
@@ -481,6 +455,7 @@ footer{
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
+    margin:10px;
 }
 svg {
     float: right;
@@ -614,12 +589,14 @@ svg {
         display: inline-block;
         height: 150px;
         width: 150px;
+        margin:0;
     }
     #social-media-comment{
         display: inline-block;
         float: right;
         height:150px;
-        width: calc(100% - 150px);     
+        width: calc(100% - 150px);
+        background-color: rgba(32,46,84,0.6);    
     }
     h2.food-name  {
         margin:14px;
@@ -671,6 +648,10 @@ svg {
     overflow: hidden;
     width: 100%;
     margin-left:0;
+    background: -moz-linear-gradient(-45deg, rgba(0,40,116,0.7) 0%, rgba(253,124,0,0.7) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(0,40,116,0.7) 0%,rgba(253,124,0,0.7) 100%);
+    background: linear-gradient(135deg, rgba(0,40,116,0.7) 0%,rgba(253,124,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3002874', endColorstr='#b3fd7c00',GradientType=1 );
 }
 
 .zoom-photo-container{

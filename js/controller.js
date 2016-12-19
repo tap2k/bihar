@@ -23,7 +23,7 @@ define([
             this.app.mainRegion.$el.hide();
             this.app.mapRegion.$el.show();
             $('#map').css({
-                "height": "calc(100vh - 75px)"
+                "height": "100vh"
             });
         }
     });

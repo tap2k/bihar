@@ -34,11 +34,11 @@ define(["marionette",
                 this.leftPanelRegion.show(this.storeView);
                 if (this.app.isMobile()) {
                     $('#map').css({
-                        "height": "calc(100vh - 188px)"
+                        "height": "100vh"
                     });
                 } else {
                     $('#map').css({
-                        "height": "calc(100vh - 75px)"
+                        "height": "100vh"
                     });
                 }
                 this.leftPanelRegion.$el.show();
