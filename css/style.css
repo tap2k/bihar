@@ -1,30 +1,16 @@
-@font-face {
-  font-family: ProximaNova;
-  src: url("../../fonts/ProximaNova.otf") format("opentype");
-  src: url("../fonts/ProximaNova.otf") format("opentype");
-}
-@font-face {
-  font-family: 'lg';
-  src: url('../assets/handsean.ttf');
-  src: local('‰÷¼'), url('../assets/handsean.ttf') format('truetype');
-  font-weight: normal;
-  font-style: bold;
-}
-
 @font-face{
     font-family: 'Damion';
     src: url("../fonts/Damion-Regular.ttf");
 }
 
 @font-face {
-font-family: ProximaNova;
-src: url("../fonts/ProximaNovaExtrabold.otf") format("opentype");
-font-weight: bold;
+    font-family: RoundedElegance;
+    src: url("../fonts/Rounded_Elegance_4.ttf");
 }
 
 @font-face {
-    font-family: RoundedElegance;
-    src: url("../fonts/Rounded_Elegance_4.ttf");
+    font-family: PTSans;
+    src: url("../fonts/PT_Sans-Web-Regular.ttf");
 }
 
 
@@ -37,7 +23,7 @@ html, body {
     color: #000;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    font-family: 'ProximaNova', sans-serif;
+    font-family: 'PTSans', sans-serif;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -47,7 +33,19 @@ html, body {
 }
 
 
-h1 { 
+
+/**************************** Typography ****************************/
+
+a{
+    text-decoration: none;
+}
+
+.splash-title-container a,
+.splash-title-container a:visited{
+    color:white;
+}
+
+.splash-title-container h1 { 
     font-weight: 300;
     color: #fff;
     font-size: 28px;
@@ -56,19 +54,32 @@ h1 {
     font-family:'RoundedElegance', sans-serif;
 }
 
-a{
-    text-decoration: none;
-}
-
-
-h1.represent{
+h1.represent,
+.tapestry-title h1{
     color:white;
     text-shadow: 0 0 3px white;
     font-family:'RoundedElegance';
-    font-size:26xpx;
+    font-size:26px;
     font-weight:300;
     margin:0 auto;
     padding: 4px 0;
+}
+
+.tapestry-title h1{
+    background-color: rgba(32,46,84,0.4);
+}
+
+.splash-title-container h1{
+    padding: 200px 0 20px;
+    text-shadow: 0 0 0.2em white;
+    border-width:1px;
+    border-style: none solid solid;
+    border-color:white;
+    width: 100%;
+    margin: 0;
+    height: 250px;
+    z-index: 30;
+    position: relative;"
 }
 
 .splash-title-container h2 {
@@ -78,32 +89,69 @@ h1.represent{
     display: inline-block;
     font-size: 36px;
     font-family:'RoundedElegance', sans-serif;
+    width:100%;
+    font-weight:300;
+    background-color: rgba(255,108,0,0.43);
+    z-index: 30;
+    position: relative;
 }
 
-.splash-title-container a,
- .splash-title-container a:visited{
+.info-box h2{
+    line-height: 1.2em;
+    margin:20px 14px 4px;
     color:white;
+    font-family: 'RoundedElegance';
+    font-size: 32px;
+}
+
+.food-detail-mobile h2{
+    font-family: 'RoundedElegance';
+    color:white;
+    font-size:24px;
+    margin: 20px 10px 0 10px;
+}
+
+.about-page h1{
+    font-size:42px;
+    position:relative;
+    margin: 30px;
 }
 
 .about-page h2{
      border:solid 1.5px white;
      padding: 10px 30px;
      position:relative;
-     margin:0;
+     margin:0 auto;
     width: 150px;
     color: white;
     font-weight: 300;
     font-size: 24px;
-}
-
-.about-page h1{
-    font-size:42px;
+    font-family: 'RoundedElegance';
 }
 
 p {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: 'PTSans', sans-serif;
     font-weight: 400;
     color: #572b2c;
+}
+
+.about-content p{
+    color:white;
+    background-color:rgba(115,99,87,.3);
+    padding:20px 20px 60px;
+    margin:20px 0 0;
+}
+
+.about-content{
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+
+.tags{
+    padding:10px 10px 30px;
+    color:white;
+    font-style: italic;
 }
 
 #left-panel fieldset{
@@ -123,7 +171,6 @@ img {
 }
 
 footer{
-    padding-top:40px;
     color:#949494;
     bottom:0px;
     position:absolute;
@@ -148,6 +195,35 @@ footer{
 .hide {
     display: none;
 }
+
+
+/**************************** Buttons ****************************/
+
+
+#search-button{
+    cursor: pointer;
+    text-decoration: none;
+    border:1.6px solid #fafa85;
+    color:white;
+    padding: 10px 30px;
+    box-shadow: 0 0 3px 2px rgba(255,255,255,0.3);
+    font-family:'RoundedElegance', sans-serif;
+    background-color:rgba(32,46,84,0.7);
+}
+
+.splash-page #search-button{
+    position: fixed;
+    right:33vw;
+    bottom:35px;
+}
+
+.mobile-sheet #search-button{
+
+}
+
+
+
+
 /*********************************** Splash ***********************************/
 
 .splash-title-container{
@@ -155,30 +231,11 @@ footer{
     left: 100px;
 }
 
-.splash-title-container h1{
-    padding: 200px 0 20px;
-    text-shadow: 0 0 0.2em white;
-    border-width:1px;
-    border-style: none solid solid;
-    border-color:white;
-    width: 100%;
-    margin: 0;
-    height: 250px;
-    z-index: 30;
-    position: relative;"
-}
+
 
 .splash-title-container > div{
      width:200px;
      text-align:center;
-}
-
-.splash-title-container h2{
-    width:100%;
-    font-weight:300;
-    background-color: rgba(255,108,0,0.43);
-    z-index: 30;
-    position: relative;
 }
 
 .text-border{
@@ -202,6 +259,31 @@ footer{
 }
 
 @media (max-width: 700px) {
+
+    .map-page{
+        background-color:rgba(32,46,84,0.7);
+    }
+    .about-page h1{
+        font-size:24px;
+        position:relative;
+        margin: 10px;
+    }
+
+    .info-box h2{
+        font-size:24px;
+
+    }
+
+    .title-decoration{
+        background-image: url('/assets/title-background-m.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: 10px;
+        width: 100vw;
+        position: absolute;
+        left: calc(-50vw + 100px);
+    }
+
     .splash-title-container{
         position: relative;
         left:0;
@@ -214,15 +296,6 @@ footer{
         padding: 100px 0 20px;
         height: 150px;
     }
-    .title-decoration{
-         background-image:url('/assets/title-background-m.png');
-         background-size: 260px;
-         background-repeat: no-repeat;
-         top: 10px;
-         width: 100vw;
-         height: 260px;
-         width: 260px;
-    }
 }
 
 
@@ -234,13 +307,11 @@ footer{
     background-color: #EEE;
     height: calc( 100vh - 75px );
     top:-3px;
+    position:absolute !important; /*need to find where this is in the js*/
 }
 
 /****** Splash Page **********/
 
-.map-page {
-    height: 100%;
-}
 .splash-page {
     position: absolute;
     width: 100%;
@@ -269,7 +340,8 @@ footer{
     -o-background-size: cover;
     background-size: cover;
     z-index:10;
-    text-align: center
+    text-align: center;
+    padding-top:30px;
 }
 
 
@@ -361,20 +433,6 @@ footer{
     padding:0 10px;
 }
 
-#col1 {
-    background-color: yellow;
-    flex :0 0 240px;
-}
-#col2 {
-    background-color: orange;
-    flex: 1 1;
-}
-#col3 {
-    background-color: purple;
-    flex: 0 0 240px;
-}
-
-
 /********************* Splash Page (covers map templates/splash.html) ********************/
 #splash {
     position: absolute;
@@ -391,19 +449,6 @@ footer{
     min-height: 400px;
 }
 
-#search-button {
-    cursor: pointer;
-    text-decoration: none;
-    border:1.6px solid #fafa85;
-    color:white;
-    padding: 10px 30px;
-    position: fixed;
-    right:33vw;
-    bottom:35px;
-    box-shadow: 0 0 3px 2px rgba(255,255,255,0.3);
-    font-family:'RoundedElegance', sans-serif;
-    background-color:rgba(32,13,4,0.5);
-}
 
 
 
@@ -447,10 +492,6 @@ footer{
     to   { opacity: 1; }
 }
 
-.info-box h2 {
-    line-height: 1.2em;
-    margin:14px;
-}
 .photo-container { 
     height: 300px;
     background-repeat: no-repeat;
@@ -475,67 +516,61 @@ svg {
     stroke-width: 2;
 }
 
-
-#social-media-handle .fa-instagram.dark {
-    color: #585858;
-}
-#social-media-handle i {
-    color: #55acee;
-}
-#social-media-handle {
-    color: #585858;
-    font-size: 1em;
-    padding: 0 14px;
-    margin-top: 0;
-    padding-bottom: 2px;
-    font-weight: bold;
-    width: calc(100% - 40px);
-    margin-bottom: 0;
+#social-media-handle{
+    margin:0 0 24px;
 }
 
 #social-media-handle a {
     color: #585858;
     font-size: 1em;
-    font-weight:bold;
-    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 1em;
+    padding: 0 14px;
+    text-transform:uppercase;
+    font-family: 'PTSans';
 }
-.food-description {
+.description {
     color: white;
     font-size: 1em;
-    padding: 0 14px 28px;
+    padding: 8px 14px 28px;
     margin: 0;
 }
 
-#search-button-top{
-    background-color: #e8700d;
-    cursor: pointer;
-    color: #ffffff;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 5px;
-    padding:3px 10px;
-    margin: 5px 7px 8px;
-}
 
-#search-button-bottom-mobile{
-    background-color: #e8700d;
-    cursor: pointer;
-    color: #ffffff;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 5px;
-    padding:3px 10px;
-    margin: 5px 7px 8px;
-    text-align:center;
-}
 
 .button-center{
     text-align:center;
-    padding-bottom:20px;
+    padding:50px;
 }
 
 
 @media (min-width: 700px) {
+
+    .tapestry-title-b{
+        height:110px;
+        background-image: url('../assets/tree-tapestry-2.png');
+        background-size: 100%;
+        text-align: center;
+        padding-top:10px;
+    }
+
+    .about-content{
+        padding:70px;
+        max-width: 900px;
+        background-image:url(/assets/about-corner-ul.png), url(/assets/about-corner-lr.png);
+        background-repeat: no-repeat no-repeat;
+        background-position: 0 0, right bottom;
+        background-size: 100px, 100px;
+        margin:0 auto;
+    }
+
+    .about-content p{
+         padding: 40px;
+         box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);
+         margin:0;
+    }
+
+
     .mobile-layout{
          display:none;
     }
@@ -564,6 +599,24 @@ svg {
 
 
 @media (max-width: 700px) {
+
+    .tapestry-title{
+        background-image: url('../assets/tree-tapestry-m.png');
+        background-size: 100%;
+        text-align: center;
+        padding:8px 0;
+        z-index: 30;
+        position: relative;
+    }
+
+    #social-media-handle a{
+        padding:0 10px;
+    }
+
+    .description{
+        padding:0 10px 20px;
+    }
+
     .nav {
         display: none;
     }
@@ -596,12 +649,7 @@ svg {
         float: right;
         height:150px;
         width: calc(100% - 150px);
-        background-color: rgba(32,46,84,0.6);    
-    }
-    h2.food-name  {
-        margin:14px;
-        line-height: 1.2;
-        font-size: 1.2em;
+        background-color: rgba(32,46,84,0.7);    
     }
     #city-name{
         font-size:0.8em;
@@ -624,10 +672,6 @@ svg {
         font-size:1em;
     }
 
-/**New Stuff**/
-    
-
-
 }
 
 
@@ -644,14 +688,9 @@ svg {
 /**************************** Mobile sheet ****************************/
 
 .mobile-sheet{
-    background-color: #fff;
     overflow: hidden;
     width: 100%;
     margin-left:0;
-    background: -moz-linear-gradient(-45deg, rgba(0,40,116,0.7) 0%, rgba(253,124,0,0.7) 100%);
-    background: -webkit-linear-gradient(-45deg, rgba(0,40,116,0.7) 0%,rgba(253,124,0,0.7) 100%);
-    background: linear-gradient(135deg, rgba(0,40,116,0.7) 0%,rgba(253,124,0,0.7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3002874', endColorstr='#b3fd7c00',GradientType=1 );
 }
 
 .zoom-photo-container{
@@ -721,19 +760,6 @@ svg {
     float: right;
 }
 
-@media (max-width: 700px) {
-    /*#bottom-nav .lg {
-        display: none;
-    }*/
-    #social-media-cta{
-        display: none;
-    }
-    #bottom-nav {
-        position: fixed;
-        right: 0px;
-        background-color: transparent;
-    }
-}
 
 
 
@@ -822,7 +848,7 @@ hr.enter {
     border-top: 1.6px solid white;
     margin: 1em 0;
     padding: 0;
-    position: fixed;
+    position: absolute;
     top: 45px;
     z-index: 10000;
     width: calc(50vw - 75px);
