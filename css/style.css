@@ -65,7 +65,8 @@ h1.represent,
     padding: 4px 0;
 }
 
-.tapestry-title h1{
+.tapestry-title h1,
+.tapestry-title-d h1{
     background-color: rgba(32,46,84,0.4);
 }
 
@@ -94,6 +95,14 @@ h1.represent,
     background-color: rgba(255,108,0,0.43);
     z-index: 30;
     position: relative;
+}
+
+.splash-title-container h3{
+     font-family:'Damion';
+     color:white;
+     font-size:34px;
+     z-index: 30;
+     position: relative;
 }
 
 .info-box h2{
@@ -320,7 +329,7 @@ footer{
     background: #FFF;
     z-index: 1000;
     background-color:#507794;
-    background: url('../assets/bridge.png') no-repeat center center fixed; 
+    background: url('../assets/bridge.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -778,11 +787,10 @@ svg {
     line-height: 20px;
     color: #fff;
     text-align: center;
-    background: #222;
+    background: rgba(0,0,0,0.4);
     -webkit-border-radius: 23px;
     -moz-border-radius: 23px;
     border-radius: 23px;
-    opacity: .4;
     filter: alpha(opacity=40);
     padding:5px ;
 }
@@ -826,6 +834,16 @@ svg {
 }
 
 /**************************** Decoration ****************************/
+
+
+.tapestry-title-d{
+     background-image: url('../assets/tree-tapestry.png');
+     background-size: 100%;
+     text-align: center;
+     padding:10px 0;
+     position: relative;
+     z-index: 100;
+}
 
 hr.enter {
     display: block;
