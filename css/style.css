@@ -258,7 +258,7 @@ footer{
 
 .title-decoration{
     position:absolute;
-     background-image:url('/assets/title-background.png');
+     background-image:url('../assets/title-background.png');
      background-size: 550px;
      background-repeat: no-repeat;
      top: 10px;
@@ -285,7 +285,7 @@ footer{
     }
 
     .title-decoration{
-        background-image: url('/assets/title-background-m.png');
+        background-image: url('../assets/title-background-m.png');
         background-size: 100%;
         background-repeat: no-repeat;
         top: 10px;
@@ -567,7 +567,7 @@ svg {
     .about-content{
         padding:70px;
         max-width: 900px;
-        background-image:url(/assets/about-corner-ul.png), url(/assets/about-corner-lr.png);
+        background-image:url(../assets/about-corner-ul.png), url(../assets/about-corner-lr.png);
         background-repeat: no-repeat no-repeat;
         background-position: 0 0, right bottom;
         background-size: 100px, 100px;
