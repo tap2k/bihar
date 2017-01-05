@@ -42,6 +42,10 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 this.map = L.mapbox.map('map', "mapbox.light", {
                     zoomControl: false
                 }).setView(this.opts.center, this.opts.zoom);
+
+                //L.mapbox.styleLayer('mapbox://styles/lg/cixindv6m000r2sn3nx2rcim1').addTo(this.map);
+
+
                 this.map.reset = true;
 
                 //add logo:
