@@ -65,6 +65,7 @@ h1.represent,
     padding: 4px 0;
 }
 
+
 .tapestry-title h1,
 .tapestry-title-d h1,
 .tapestry-title-b h1{
@@ -743,12 +744,21 @@ svg {
     text-align: right;
     width: 100%;
 }
-.leaflet-container a.lg, .leaflet-container a.lg:hover, .leaflet-container a.lg:visited {
+.leaflet-container a.lg, 
+.leaflet-container a.lg:hover, 
+.leaflet-container a.lg:visited {
     color: #444;
     text-decoration: none;
     font: 12px/12px 'lg';
     line-height: 25px;
 }
+
+
+h1.represent a,
+h1.represent a:hover {
+    color:white;
+}
+
 .leaflet-left {
     left: 0;
     height: 25px;
