@@ -213,7 +213,7 @@ footer{
 #search-button{
     cursor: pointer;
     text-decoration: none;
-    border:1.6px solid #fafa85;
+    border:1px solid #fafa85;
     color:white;
     padding: 10px 30px;
     box-shadow: 0 0 3px 2px rgba(255,255,255,0.3);
@@ -225,11 +225,9 @@ footer{
     position: fixed;
     right:33vw;
     bottom:35px;
+    z-index:999;
 }
 
-.mobile-sheet #search-button{
-
-}
 
 
 
@@ -276,6 +274,7 @@ footer{
 
     .map-page{
         background-color:rgba(32,46,84,0.7);
+        min-height:100vh;
     }
     .about-page h1{
         font-size:24px;
@@ -284,8 +283,8 @@ footer{
     }
 
     .info-box h2{
-        font-size:24px;
-
+        font-size:20px;
+        margin-top:14px;
     }
 
     .title-decoration{
@@ -622,11 +621,15 @@ svg {
 
 @media (max-width: 700px) {
 
+    .tapestry-title h1{
+        font-size:20px;
+    }
+
     .tapestry-title{
         background-image: url('../assets/tree-tapestry-m.png');
         background-size: 100%;
         text-align: center;
-        padding:8px 0;
+        padding:6px 0;
         z-index: 30;
         position: relative;
     }
@@ -871,7 +874,7 @@ hr.enter {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1.6px solid #fafa85;
+    border-top: 1px solid #fafa85;
     margin: 1em 0;
     padding: 0;
     position: fixed;
