@@ -102,7 +102,7 @@ h1.represent,
 .splash-title-container h3{
      font-family:'Damion';
      color:white;
-     font-size:34px;
+     font-size:28px;
      z-index: 30;
      position: relative;
 }
@@ -319,7 +319,6 @@ footer{
     width: 100%;
     background-color: #EEE;
     height: calc( 100vh - 75px );
-    top:-3px;
     position:absolute !important; /*need to find where this is in the js*/
 }
 
@@ -879,7 +878,7 @@ hr.enter {
     padding: 0;
     position: fixed;
     right: 0;
-    bottom: 40px;
+    bottom: 38px;
     z-index: 10000;
     width: 33vw;
 }
