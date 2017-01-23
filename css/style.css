@@ -41,10 +41,11 @@ a{
 }
 
 .splash-title-container a,
-.splash-title-container a:visited{
+.splash-title-container a:visited,
+h1 a,
+h1 a:visited{
     color:white;
 }
-
 .splash-title-container h1 { 
     font-weight: 300;
     color: #fff;
@@ -82,7 +83,7 @@ h1.represent,
     margin: 0;
     height: 250px;
     z-index: 30;
-    position: relative;"
+    position: relative;
 }
 
 .splash-title-container h2 {
@@ -129,10 +130,10 @@ h1.represent,
 }
 
 .about-page h2{
-     border:solid 1.5px white;
-     padding: 10px 30px;
-     position:relative;
-     margin:0 auto;
+    border:solid 1.5px white;
+    padding: 10px 30px;
+    position:relative;
+    margin:0 auto;
     width: 150px;
     color: white;
     font-weight: 300;
@@ -213,37 +214,53 @@ footer{
 #search-button{
     cursor: pointer;
     text-decoration: none;
-    border:1px solid #fafa85;
+    border:1px solid white;
     color:white;
     padding: 10px 30px;
     box-shadow: 0 0 3px 2px rgba(255,255,255,0.3);
     font-family:'RoundedElegance', sans-serif;
-    background-color:rgba(32,46,84,0.7);
+    background-color:rgba(25,59,83,0.7);
+    width:100px;
 }
 
 .splash-page #search-button{
     position: fixed;
     right:33vw;
-    bottom:35px;
+    bottom:75px;
     z-index:999;
 }
 
 
-
-
-
 /*********************************** Splash ***********************************/
+
+
+.splash-page {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    min-height: 100%;
+    background: #FFF;
+    z-index: 1000;
+    background-color:#507794;
+    background: url('../assets/bridge.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .splash-title-container{
     position: absolute;
     left: 100px;
 }
 
-
-
 .splash-title-container > div{
      width:200px;
      text-align:center;
+}
+
+.splash-title-container > div > div{
+     position:relative;
 }
 
 .text-border{
@@ -265,6 +282,71 @@ footer{
      height: calc(100vh - 260px);
      width: calc(100vw - 65px);
 }
+
+#about{
+    color: white;
+    position: fixed;
+    right: 33vw;
+    bottom: 35px;
+    z-index: 999;
+    vertical-align: middle;
+    width: 100px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'RoundedElegance'
+}
+
+hr.enter {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid white;
+    margin: 1em 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    bottom: 78px;
+    z-index: 10000;
+    width: 33vw;
+}
+
+/**************************** Decoration ****************************/
+
+
+.tapestry-title-d{
+     background-image: url('../assets/tree-tapestry.png');
+     background-size: 100%;
+     text-align: center;
+     padding:10px 0;
+     position: relative;
+     z-index: 100;
+}
+
+
+/**************************** About Page ****************************/
+
+.about-page hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1.6px solid white;
+    margin: 1em 0;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    z-index: 10000;
+    width: calc(50vw - 75px);
+}
+
+.about-page hr.left{
+    left:0;
+}
+
+.about-page hr.right{
+    right:0;
+}
+
+/*********************************** Splash mobile ***********************************/
 
 @media (max-width: 700px) {
 
@@ -309,6 +391,23 @@ footer{
         padding: 100px 0 20px;
         height: 150px;
     }
+
+    .splash-page #search-button,
+    #about{
+        right:calc(50vw - 50px);
+    }
+
+    hr.enter{
+        width: calc(50vw - 50px);
+    }
+
+    .splash-title-container h2{
+        font-size:30px;
+    }
+    .splash-title-container h1{
+        font-size:24px;
+    }
+
 }
 
 
@@ -317,26 +416,10 @@ footer{
 /*********************************** Map ***********************************/
 #map {
     width: 100%;
+    top:0;
     background-color: #EEE;
     height: calc( 100vh - 75px );
     position:absolute !important; /*need to find where this is in the js*/
-}
-
-/****** Splash Page **********/
-
-.splash-page {
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    min-height: 100%;
-    background: #FFF;
-    z-index: 1000;
-    background-color:#507794;
-    background: url('../assets/bridge.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .about-page {
@@ -386,6 +469,7 @@ footer{
     padding: 0px 0px 0px 0px;
     overflow: hidden;
 }
+
 .title-text {
     text-align: center;
     max-width: 860px;
@@ -395,7 +479,6 @@ footer{
     position: fixed;
     left: 20px;
 }
-
 
 .container {
     padding: 30px 20px 50px 20px;
@@ -422,7 +505,6 @@ footer{
     font-family: 'Cubano';
 }
 .grid-img {
-    /*width: 100%;*/
     width: 270px;
     height: 270px;
     background-repeat: no-repeat;
@@ -444,23 +526,6 @@ footer{
     margin-right: auto;
     padding:0 10px;
 }
-
-/********************* Splash Page (covers map templates/splash.html) ********************/
-#splash {
-    position: absolute;
-    top: 56px;  
-    background: rgba(34,34,34,0.45);
-    text-align: center;
-    width: 100%;
-    z-index: 1000;
-}
-
-#place-overview {
-    background-color: #FFF;
-    padding-top: 15px;
-    min-height: 400px;
-}
-
 
 
 
@@ -536,7 +601,6 @@ svg {
     color: #585858;
     font-size: 1em;
     color: rgba(255,255,255,0.6);
-    font-size: 1em;
     padding: 0 14px;
     text-transform:uppercase;
     font-family: 'PTSans';
@@ -857,51 +921,6 @@ h1.represent a:hover {
    margin-top: -2px;
 }
 
-/**************************** Decoration ****************************/
 
-
-.tapestry-title-d{
-     background-image: url('../assets/tree-tapestry.png');
-     background-size: 100%;
-     text-align: center;
-     padding:10px 0;
-     position: relative;
-     z-index: 100;
-}
-
-hr.enter {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #fafa85;
-    margin: 1em 0;
-    padding: 0;
-    position: fixed;
-    right: 0;
-    bottom: 38px;
-    z-index: 10000;
-    width: 33vw;
-}
-
-.about-page hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1.6px solid white;
-    margin: 1em 0;
-    padding: 0;
-    position: absolute;
-    top: 45px;
-    z-index: 10000;
-    width: calc(50vw - 75px);
-}
-
-.about-page hr.left{
-    left:0;
-}
-
-.about-page hr.right{
-    right:0;
-}
 
 
