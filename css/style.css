@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: RoundedElegance;
-    src: url("../fonts/Rounded_Elegance_4.ttf");
+    src: url("../fonts/Rounded_Elegance_2.ttf");
 }
 
 @font-face {
@@ -311,10 +311,10 @@ hr.enter {
     width: 33vw;
 }
 
-    /***********************************  mobile ***********************************/
+    /*********************************** Splash mobile ***********************************/
 
     @media (max-width: 700px) {
-    /*********************************** Splash mobile ***********************************/
+
         #audio-container{
             padding: 0 20px 10px 20px;
         }
@@ -380,68 +380,6 @@ hr.enter {
 
         .splash-title-container h1{
             font-size:24px;
-        }
-/*********************************** Map mobile and tablet ***********************************/
-        .tapestry-title h1{
-            font-size:20px;
-        }
-
-        .tapestry-title{
-            background-image: url('../assets/tree-tapestry-m.png');
-            background-size: 100%;
-            text-align: center;
-            padding:6px 0;
-            z-index: 30;
-            position: relative;
-        }
-
-        #social-media-handle a{
-            padding:0 10px;
-        }
-
-        .description{
-            padding:0 10px 20px;
-        }
-        .photo-container svg{
-            visibility:hidden;
-        }
-        .desktop-layout{
-            display:none;
-            padding:0;
-        }
-        .info-box{
-            width: 100%;
-            margin-left:0;
-            position:fixed;
-            bottom:0px;
-            border-style:none;
-        }
-        .photo-container {
-            display: inline-block;
-            height: 150px;
-            width: 150px;
-            margin:0;
-        }
-        #social-media-comment{
-            display: inline-block;
-            float: right;
-            height:150px;
-            width: calc(100% - 150px);
-            background-color: rgba(32,46,84,0.7);    
-        }
-        #city-name{
-            font-size:0.8em;
-            padding:14px;
-            text-align:center;
-        }
-        .carousel-control{
-            top:40%;
-        }
-        .container>h2{
-            font-size:1.4em;
-        }
-        #home-title{
-            font-size:1em;
         }
     }
 
@@ -696,6 +634,76 @@ svg {
         width:100vw;
     }
 }
+
+/*********************************** Map mobile and tablet ***********************************/
+
+@media (max-width: 700px) {
+
+    .tapestry-title h1{
+        font-size:20px;
+    }
+
+    .tapestry-title{
+        background-image: url('../assets/tree-tapestry-m.png');
+        background-size: 100%;
+        text-align: center;
+        padding:6px 0;
+        z-index: 30;
+        position: relative;
+    }
+
+    #social-media-handle a{
+        padding:0 10px;
+    }
+
+    .description{
+        padding:0 10px 20px;
+    }
+    .photo-container svg{
+        visibility:hidden;
+    }
+    .desktop-layout{
+        display:none;
+        padding:0;
+    }
+    .info-box{
+        width: 100%;
+        margin-left:0;
+        position:fixed;
+        bottom:0px;
+        border-style:none;
+    }
+    .photo-container {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        margin:0;
+    }
+    #social-media-comment{
+        display: inline-block;
+        float: right;
+        height:150px;
+        width: calc(100% - 150px);
+        background-color: rgba(32,46,84,0.7);    
+    }
+    #city-name{
+        font-size:0.8em;
+        padding:14px;
+        text-align:center;
+    }
+    .carousel-control{
+        top:40%;
+    }
+    .container>h2{
+        font-size:1.4em;
+    }
+    #home-title{
+        font-size:1em;
+    }
+
+}
+
+
 
 
 /**************************** Map obile sheet ****************************/
