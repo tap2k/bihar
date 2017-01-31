@@ -14,10 +14,22 @@
             <a target="_blank" href="https://instagram.com/{{ extras.handle }}">@{{ extras.handle }}</a>
         {{/ifequal}}
     </p>
+
+    <audio controls preload class="audio" class = "mobile-layout">
+      <source src="http://www.archive.org/download/LouisArmstrongAllHisStars-struttinWithSomeBarbecue/LouisArmstrongAllHisStars-StruttinWithSomeBarbecue.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="audio-container" class = "mobile-layout">
+        <div id="play" onclick="toggle()"></div>
+        <div id="progress">
+            <div></div>
+        </div>
+    </div>
+
     <!-- Three curly braces if you don't want to escape HTML -->
     <p class="description">
         "{{{ caption }}}"
-        <a href="#" class="zoom browser-layout" zoom-level="18">zoom to restaurant</a>
+        <a href="#" class="zoom desktop-layout" zoom-level="18">zoom to restaurant</a>
     </p>
 
     <span class = "tags">{{ extras.price }}</span>
