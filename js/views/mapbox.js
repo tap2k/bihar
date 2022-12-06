@@ -40,9 +40,12 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 }
 
                 L.mapbox.accessToken = 'pk.eyJ1IjoibGciLCJhIjoibWd5aTl2VSJ9.W9ZsT1zQsI9ZP72KtTdZTA';
-                this.map = L.mapbox.map('map', "mapbox.light", {
-                    zoomControl: false
-                }).setView(this.opts.center, this.opts.zoom);
+                //this.map = L.mapbox.map('map', "mapbox.light", {
+                //    zoomControl: false
+                //}).setView(this.opts.center, this.opts.zoom);
+                this.map = L.mapbox.map('map')
+                .setView(this.opts.center, this.opts.zoom)
+                .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v11'));
 
                 this.map.reset = true;
 
