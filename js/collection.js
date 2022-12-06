@@ -21,6 +21,7 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 _.extend(this, opts);
                 this.url = this.api_endpoint + '?page_size=' + this.page_size;
                 this.url += '&format=json';
+                this.url += '&project_id=' + this.project_id;
                 if (this.server_query) {
                     this.url += "&query=" + this.server_query;
                 }
