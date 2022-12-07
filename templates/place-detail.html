@@ -1,4 +1,4 @@
-<div class="food-detail info-box food-detail-generic">
+<div class="story-detail info-box story-detail-generic">
     <div class = "desktop-layout tapestry-title-d">
         <h1 class = "represent">
             <a href = "../bihar">Represent Bihar</a>
@@ -9,18 +9,18 @@
         {{ story_title }}
     </h2>
     
-    <p id="social-media-handle" class="desktop-layout">
+    <p id="narrator-name" class="desktop-layout">
         {{ narrator_name }}
     </p>
     
-    <p id="social-media-handle" class="desktop-layout">
+    <p id="narrator-name" class="desktop-layout">
         {{ summary }}
     </p>
 
     <div class="photo-container" style="background-image: url('https://localground-prod.s3.amazonaws.com/media/vatsala/photos/Shefali4_250.jpg');" />
 
-    <audio controls id="player" class="audio" class="mobile-layout">
-      <source src="https://localground-prod.s3.amazonaws.com/media/vatsala/audio/shefaliroy2hindi_uHn2pb9.mp3" type="audio/mp3" />
+    <audio controls preload id="player" class="audio" class="mobile-layout">
+      <source src="https://localground-prod.s3.amazonaws.com/media/vatsala/audio/shefaliroy2hindi_uHn2pb9.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="audio-container" class = "desktop-layout">
@@ -35,7 +35,7 @@
         <a class="carousel-control right next-place" href="#" data-slide="next">&rsaquo;</a>
     </div>
 
-    <div class="about desktop-layout">
+    <div class="about">
         <a href="#/explore">Explore</a>
     </div>
 </div>

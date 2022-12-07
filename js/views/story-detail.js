@@ -12,7 +12,6 @@ define([
     var StoreDetail = Marionette.ItemView.extend({
         events: {
             'click .zoom': 'zoomToMarker',
-            'click #social-media-comment': 'showSheet',
             'click .close-btn': 'hideSheet',
             'click .previous-place': 'previous',
             'click .next-place': 'next',
@@ -53,7 +52,7 @@ define([
             //https://github.com/wookiehangover/backbone.hammer/issues/2
             var that = this, div, hammerMain;
             //idea: if fullscreen, div should be image
-            div = this.$el.find('.food-detail').get(0);
+            div = this.$el.find('.story-detail').get(0);
             if (this.isFullScreen) {
                 div = this.$el.find('.zoom-photo-container').get(0);
             }

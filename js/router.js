@@ -9,8 +9,8 @@ define([
         appRoutes: {
             '': 'home',
             'explore': 'explore',
-            'places/zoom/:id': 'storeDetailFullScreen',
-            'places/:id': 'storeDetail'
+            'places/zoom/:id': 'storyDetailFullScreen',
+            'places/:id': 'storyDetail'
         },
         initialize: function (options) {
             this.controller = new Controller({

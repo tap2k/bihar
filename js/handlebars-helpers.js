@@ -1,12 +1,14 @@
 define(["handlebars"],
     function (Handlebars) {
         "use strict";
+
         Handlebars.registerHelper("ifHasQuotes", function (txt, block) {
             if (txt && txt.indexOf("\"") != -1) {
                 return block.fn(this);
             }
             return false;
         });
+
         Handlebars.registerHelper('ifequal', function (lvalue, rvalue, options) {
             if (arguments.length < 3) {
                 throw new Error("Handlebars Helper equal needs 2 parameters");
@@ -96,6 +98,4 @@ define(["handlebars"],
             }
             return html;
         });
-
-
     });

@@ -28,7 +28,6 @@ define(["lib/truthStatement"], function (TruthStatement) {
                     }
                 }
             };
-
             this.checkModel = function (model) {
                 var i = 0,
                     truthVal = !this.failureFlag,

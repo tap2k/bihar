@@ -1,9 +1,9 @@
 define(["marionette",
         "handlebars",
         "views/mapbox",
-        "views/store-detail",
+        "views/story-detail",
         "text!../../templates/map-page.html"],
-    function (Marionette, Handlebars, MapboxView, StoreDetail, MapPageTemplate) {
+    function (Marionette, Handlebars, MapboxView, StoryDetail, MapPageTemplate) {
         'use strict';
         var MapLayout = Marionette.LayoutView.extend({
             regions: {
@@ -14,8 +14,8 @@ define(["marionette",
                 _.extend(this, opts);
                 this.opts = opts;
                 Marionette.LayoutView.prototype.initialize.call(this);
-                this.listenTo(this.app.vent, 'load-panel', this.loadStorePanel);
-                this.listenTo(this.app.vent, 'zoom-to-extents', this.hideStorePanel);
+                this.listenTo(this.app.vent, 'load-panel', this.loadStoryPanel);
+                this.listenTo(this.app.vent, 'zoom-to-extents', this.hideStoryPanel);
             },
             template: function () {
                 return Handlebars.compile(MapPageTemplate);
@@ -24,23 +24,17 @@ define(["marionette",
                 this.mapboxView = new MapboxView(this.opts);
                 this.mapboxRegion.show(this.mapboxView);
             },
-            loadStorePanel: function (id, isFullScreen) {
+            loadStoryPanel: function (id, isFullScreen) {
                 var model = this.opts.collection.get(id);
-                this.storeView = new StoreDetail({
+                this.storyView = new StoryDetail({
                     model: model,
                     isFullScreen: isFullScreen,
                     app: this.app
                 });
-                this.leftPanelRegion.show(this.storeView);
-                if (this.app.isMobile()) {
-                    $('#map').css({
-                        "height": "100vh"
-                    });
-                } else {
-                    $('#map').css({
-                        "height": "100vh"
-                    });
-                }
+                this.leftPanelRegion.show(this.storyView);
+                $('#map').css({
+                    "height": "100vh"
+                });
                 this.leftPanelRegion.$el.show();
                 if (isFullScreen) {
                     this.mapboxRegion.$el.hide();
@@ -48,7 +42,7 @@ define(["marionette",
                     this.mapboxRegion.$el.show();
                 }
             },
-            hideStorePanel: function () {
+            hideStoryPanel: function () {
                 if (this.leftPanelRegion.$el) {
                     this.leftPanelRegion.$el.hide();
                 }

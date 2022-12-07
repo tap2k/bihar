@@ -4,7 +4,7 @@ define(["underscore", "backbone", "lib/sqlParser"],
         /**
          * An "abstract" Backbone Collection; the root of all of the other
          * localground.collections.* classes. Has some helper methods that help
-         * Backbone.Collection objects more easily interat with the Local Ground
+         * Backbone.Collection objects more easily interact with the Local Ground
          * Data API.
          * @class localground.collections.Base
          */
@@ -21,9 +21,6 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 _.extend(this, opts);
                 this.url = this.api_endpoint + '?page_size=' + this.page_size;
                 this.url += '&format=json';
-                if (this.server_query) {
-                    this.url += "&query=" + this.server_query;
-                }
             },
             parse: function (response) {
                 this.count = response.count;
@@ -32,7 +29,6 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 //console.log(this.next, this.previous, this.count);
                 return response.results;
             },
-
             applyFilter: function (sql) {
                 var sqlParser = new SqlParser(sql);
                 this.each(function (model) {
@@ -44,24 +40,13 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 });
                 this.trigger('filter-applied');
             },
-
             clearFilter: function () {
                 //console.log("clearFilter");
                 this.each(function (model) {
                     model.set("hidden", false);
                 });
                 this.trigger('filter-applied');
-            },
-
-            comparator: function (collection) {
-                try {
-                    return collection.get('extras').order;
-                } catch (e) {
-                    return 0;
-                }
             }
-
         });
-
         return Base;
     });

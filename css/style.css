@@ -13,9 +13,8 @@
     src: url("../fonts/PT_Sans-Web-Regular.ttf");
 }
 
-
-
 /**************************** Generic Tag Styles ****************************/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -25,13 +24,13 @@ html, body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     font-family: 'PTSans', sans-serif;
 }
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 
 /**************************** Layout  ****************************/
 
@@ -42,7 +41,6 @@ html, body {
 .map-view {
     float: right;
 }
-
 
 /**************************** Typography ****************************/
 
@@ -132,7 +130,7 @@ h1.represent a:hover {
     font-size: 32px;
 }
 
-.food-detail-mobile h2{
+.story-detail-mobile h2{
     font-size:24px;
     margin: 20px 10px 0 10px;
 }
@@ -211,7 +209,6 @@ footer{
 
 /**************************** Buttons ****************************/
 
-
 #search-button{
     cursor: pointer;
     text-decoration: none;
@@ -231,9 +228,7 @@ footer{
     z-index:999;
 }
 
-
 /*********************************** Splash ***********************************/
-
 
 .splash-page {
     position: absolute;
@@ -311,78 +306,77 @@ hr.enter {
     width: 33vw;
 }
 
-    /*********************************** Splash mobile ***********************************/
+/*********************************** Splash mobile ***********************************/
 
-    @media (max-width: 700px) {
+@media (max-width: 700px) {
 
-        #audio-container{
-            padding: 0 20px 10px 20px;
-        }
-
-        .nav {
-            display: none;
-        }
-
-        .tags{
-            padding:10px 10px 30px;
-        }
-
-        .map-page{
-            background-color:rgba(32,46,84,0.7);
-            min-height:100vh;
-        }
-        .about-page h1{
-            font-size:24px;
-            position:relative;
-            margin: 10px;
-        }
-
-        .info-box h2{
-            font-size:20px;
-            margin-top:14px;
-        }
-
-        .title-decoration{
-            background-image: url('../assets/title-background-m.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            top: 10px;
-            width: 100vw;
-            position: absolute;
-            left: calc(-50vw + 100px);
-        }
-
-        .splash-title-container{
-            position: relative;
-            left:0;
-        }
-        .splash-title-container > div{
-            margin:auto;
-        }
-
-        .splash-title-container h1{
-            padding: 100px 0 20px;
-            height: 150px;
-        }
-
-        .splash-page #search-button,
-        #about{
-            right:calc(50vw - 50px);
-        }
-
-        hr.enter{
-            width: calc(50vw - 50px);
-        }
-
-        .splash-title-container h2{
-            font-size:30px;
-        }
-
-        .splash-title-container h1{
-            font-size:24px;
-        }
+    #audio-container{
+        padding: 0 20px 10px 20px;
     }
 
+    .nav {
+        display: none;
+    }
+
+    .tags{
+        padding:10px 10px 30px;
+    }
+
+    .map-page{
+        background-color:rgba(32,46,84,0.7);
+        min-height:100vh;
+    }
+    .about-page h1{
+        font-size:24px;
+        position:relative;
+        margin: 10px;
+    }
+
+    .info-box h2{
+        font-size:20px;
+        margin-top:14px;
+    }
+
+    .title-decoration{
+        background-image: url('../assets/title-background-m.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: 10px;
+        width: 100vw;
+        position: absolute;
+        left: calc(-50vw + 100px);
+    }
+
+    .splash-title-container{
+        position: relative;
+        left:0;
+    }
+    .splash-title-container > div{
+        margin:auto;
+    }
+
+    .splash-title-container h1{
+        padding: 100px 0 20px;
+        height: 150px;
+    }
+
+    .splash-page #search-button,
+    #about{
+        right:calc(50vw - 50px);
+    }
+
+    hr.enter{
+        width: calc(50vw - 50px);
+    }
+
+    .splash-title-container h2{
+        font-size:30px;
+    }
+
+    .splash-title-container h1{
+        font-size:24px;
+    }
+}
 
 /**************************** About Page ****************************/
 
@@ -424,10 +418,8 @@ hr.enter {
     padding-top:30px;
 }
 
-
-
-
 /*********************************** Map ***********************************/
+
 #map {
     width: 100%;
     top:0;
@@ -457,7 +449,6 @@ hr.enter {
   position: relative;
 }
 
-
 /**************************** Map Decoration ****************************/
 
 .tapestry-title-d{
@@ -469,20 +460,20 @@ hr.enter {
      z-index: 100;
 }
 
-
-
 /********************* Food Detail Page (templates/place-detail.html) *********************/
+
 .info-box{
     display: none;
     overflow: hidden;
     z-index: 1000;
 }
 
-.food-detail {
+.story-detail {
     display: block;
     width: 100%;
     text-decoration: none;
 }
+
 .info-box > div {
     -webkit-animation: fadein 2s;
        -moz-animation: fadein 2s;
@@ -490,22 +481,27 @@ hr.enter {
          -o-animation: fadein 2s;
             animation: fadein 2s;
 }
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
 @-moz-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
 @-ms-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -517,29 +513,33 @@ hr.enter {
     background-size: cover;
     margin:10px;
 }
+
 svg {
     float: right;
     margin-top: 20px;
 }
+
 .tag, .tag-outline {
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
 }
+
 .tag {
     cursor: pointer;
     fill: #203F54;
 }
+
 .tag-outline {
     fill-opacity: 0;
     stroke: #203F54;
     stroke-width: 2;
 }
 
-#social-media-handle{
+#narrator-name{
     margin:10px 24px 24px 24px;
 }
 
-#social-media-handle a {
+#narrator-name a {
     color: #585858;
     font-size: 1em;
     color: rgba(255,255,255,0.6);
@@ -562,7 +562,7 @@ svg {
 #left-panel .about{
      width: 100%;
      text-align: center;
-     padding-top: 40px;
+     padding-top: 0px;
 }
 
 #left-panel .about a{
@@ -571,13 +571,11 @@ svg {
     text-decoration: underline;
 }
 
-
-
 /*********************************** Map larger than 700 ***********************************/
 @media (min-width: 700px) {
 
-    .food-detail{
-        padding-bottom: 40px;
+    .story-detail{
+        padding-bottom: 10px;
     }
 
     .tags{
@@ -608,10 +606,10 @@ svg {
          margin:0;
     }
 
-
     .mobile-layout{
          display:none;
     }
+
     #left-panel{
         width: 380px;
         height:100%;
@@ -624,12 +622,15 @@ svg {
         background: linear-gradient(135deg, rgba(0,40,116,0.7) 0%,rgba(253,124,0,0.7) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3002874', endColorstr='#b3fd7c00',GradientType=1 );
     }
+
     #bottom-nav {
         width: 100%;
     }
+
     .carousel-control{
         bottom:50px;
     }
+
     .map{
         width:100vw;
     }
@@ -652,20 +653,23 @@ svg {
         position: relative;
     }
 
-    #social-media-handle a{
+    #narrator-name a{
         padding:0 10px;
     }
 
     .description{
         padding:0 10px 20px;
     }
+
     .photo-container svg{
         visibility:hidden;
     }
+
     .desktop-layout{
         display:none;
         padding:0;
     }
+
     .info-box{
         width: 100%;
         margin-left:0;
@@ -673,38 +677,27 @@ svg {
         bottom:0px;
         border-style:none;
     }
+
     .photo-container {
         display: inline-block;
         height: 150px;
         width: 150px;
         margin:0;
     }
-    #social-media-comment{
-        display: inline-block;
-        float: right;
-        height:150px;
-        width: calc(100% - 150px);
-        background-color: rgba(32,46,84,0.7);    
-    }
-    #city-name{
-        font-size:0.8em;
-        padding:14px;
-        text-align:center;
-    }
+
     .carousel-control{
         top:40%;
     }
+
     .container>h2{
         font-size:1.4em;
     }
+
     #home-title{
         font-size:1em;
     }
 
 }
-
-
-
 
 /**************************** Map mobile sheet ****************************/
 
@@ -728,8 +721,6 @@ svg {
     }
 }
 
-
-
 /**************************** Bottom Navigation ****************************/
 
 #bottom-nav {
@@ -743,6 +734,7 @@ svg {
     text-align: right;
     width: 100%;
 }
+
 .leaflet-container a.lg, 
 .leaflet-container a.lg:hover, 
 .leaflet-container a.lg:visited {
@@ -762,6 +754,7 @@ svg {
     font: 14px/14px 'lg';
     line-height: 30px;
 } 
+
 #bottom-nav .lg img {
     width: 30px;
     vertical-align: middle;
@@ -772,8 +765,6 @@ svg {
     margin-right: 5px;
     vertical-align: sub;
 }
-
-
 
 /**************************/
 /* New Styles Sarah Added */
@@ -795,7 +786,7 @@ svg {
     -moz-border-radius: 23px;
     border-radius: 23px;
     filter: alpha(opacity=40);
-    padding:5px ;
+    padding: 5px;
 }
 
 .carousel-control.right {
@@ -803,20 +794,16 @@ svg {
     left: auto;
 }
 
-.more {
-    text-decoration: none;
-}
-
 .close-btn {
     right: 4px;
-    top: 70px;
+    top: 15px;
     font-size: 25px;
     line-height: 25px;
     position: absolute;
     text-decoration: none;
     width: 30px;
     height: 30px;
-    margin-top: -20px;
+    /*margin-top: -20px;*/
     font-weight: 100;
     color: #666;
     text-align: center;
@@ -828,13 +815,6 @@ svg {
     opacity: .7;
     filter: alpha(opacity=70);
 }
-
-.fa-home {
-   color: #FFF;
-   float: left;
-   margin-top: -2px;
-}
-
 
 /************************Audio Player ********************************/
 

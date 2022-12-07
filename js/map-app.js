@@ -4,15 +4,15 @@ define([
     "backbone",
     "router",
     "collection",
-    "views/places-preview",
+    "views/splash-view",
     "views/map-view",
     "handlebars-helpers"
-], function ($, Marionette, Backbone, Router, Collection, PlacesPreview, MapView) {
+], function ($, Marionette, Backbone, Router, Collection, SplashView, MapView) {
     "use strict";
     var MapApp = Marionette.Application.extend({
         regions: {
+            mainRegion: ".splash-page",
             mapRegion: ".map-page",
-            mainRegion: ".splash-page"
         },
         start: function (options) {
             // Perform the default 'start' functionality
@@ -29,17 +29,13 @@ define([
 
             //fetch data:
             this.collection = new Collection(null, {
-                //api_endpoint: 'http://dev.localground.org/api/0/photos/',
-                //page_size: 150,
-                //server_query: "WHERE project = 33"
                 api_endpoint: 'https://localground.org/api/0/datasets/50/data/'
             });
             this.collection.fetch({ reset: true });
 
             //initialize views:
-            this.mainView = new PlacesPreview({
-                app: this,
-                collection: this.collection
+            this.mainView = new SplashView({
+                app: this
             });
             this.mapView = new MapView({
                 collection: this.collection,
@@ -53,7 +49,7 @@ define([
                     clickURL: "places/:id",
                     color: "eb6627",
                     icon: {
-                        iconUrl: 'assets/plate2.png',
+                        iconUrl: 'assets/iconselected.png',
                         iconSize: [50, 50],
                         iconAnchor: [25, 25]
                     },
