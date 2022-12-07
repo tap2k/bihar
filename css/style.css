@@ -155,7 +155,7 @@ h1.represent a:hover {
 
 p {
     font-weight: 400;
-    color: #572b2c;
+    color: #ffffff;
 }
 
 .about-content p{
@@ -512,7 +512,7 @@ hr.enter {
 }
 
 .photo-container { 
-    height: 300px;
+    height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
     margin:10px;
@@ -536,7 +536,7 @@ svg {
 }
 
 #social-media-handle{
-    margin:0 0 24px;
+    margin:10px 24px 24px 24px;
 }
 
 #social-media-handle a {
@@ -628,7 +628,7 @@ svg {
         width: 100%;
     }
     .carousel-control{
-        top:200px;
+        bottom:50px;
     }
     .map{
         width:100vw;
@@ -706,7 +706,7 @@ svg {
 
 
 
-/**************************** Map obile sheet ****************************/
+/**************************** Map mobile sheet ****************************/
 
 .mobile-sheet{
     overflow: hidden;
@@ -874,7 +874,7 @@ audio {
 
 #progress > div {
   height: 10px;
-  width:37%;
+  width: 0%;
   background: white;
 }
 
@@ -888,7 +888,7 @@ audio {
 }
 
 #play.pause {
-  width: 10px;
+  width: 30px;
   height: 30px;
   border-width: 0 10px 0 10px;
   border-color: #efefef;

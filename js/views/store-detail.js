@@ -17,7 +17,8 @@ define([
             'click .previous-place': 'previous',
             'click .next-place': 'next',
             'click .previous-place-zoom': 'previous',
-            'click .next-place-zoom': 'next'
+            'click .next-place-zoom': 'next',
+            'click #play': 'toggle',
         },
         template: Handlebars.compile(StoreTemplate),
         initialize: function (opts) {
@@ -41,6 +42,8 @@ define([
         },
         onRender: function () {
             this.addSwipeHandlers();
+            var player = this.$el.find('#player').get(0);
+            player.addEventListener("timeupdate", this.onTimeUpdate);
         },
         checkIfIsFullScreen: function () {
             return this.$el.find(".mobile-sheet").length > 0;
@@ -97,6 +100,25 @@ define([
             }
             this.model.trigger('zoom-to-marker', zoom);
             if (e) { e.preventDefault(); }
+        },
+        toggle: function () {
+            var player = this.$el.find('#player').get(0);
+            var play = this.$el.find('#play').get(0);
+            if (!player.paused)
+            {
+                play.classList.remove("pause");
+                player.pause();
+            }
+            else
+            {
+                play.classList.add("pause");
+                player.play();
+            }
+        },
+        onTimeUpdate: function(){
+            var percent = this.currentTime/this.duration*100;
+            var elem = document.getElementById('progress').children[0];
+            elem.style.width = percent + "%";
         }
     });
     return StoreDetail;

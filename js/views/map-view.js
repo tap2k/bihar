@@ -47,17 +47,11 @@ define(["marionette",
                 } else {
                     this.mapboxRegion.$el.show();
                 }
-                if (model.get("extras")) {
-                    this.$el.find("#city-name").html(model.get("extras").city);
-                } else {
-                    this.$el.find("#city-name").html("PLEASE POPULATE EXTRAS");
-                }
             },
             hideStorePanel: function () {
                 if (this.leftPanelRegion.$el) {
                     this.leftPanelRegion.$el.hide();
                 }
-                this.$el.find("#city-name").html("#5DOLLARCHALLENGE");
                 this.mapboxRegion.$el.show();
             }
         });

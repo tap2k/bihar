@@ -1,54 +1,42 @@
 <div class="food-detail info-box food-detail-generic">
     <div class = "desktop-layout tapestry-title-d">
         <h1 class = "represent">
-            <a href = "../">Represent Bihar</a>
+            <a href = "../bihar">Represent Bihar</a>
         </h1>
     </div>
+    
     <h2 class = "desktop-layout">
-        {{ name }}
+        {{ story_title }}
     </h2>
+    
     <p id="social-media-handle" class="desktop-layout">
-        {{#ifequal extras.source "twitter"}}
-            <a target="_blank" href="https://twitter.com/{{ extras.handle }}">@{{ extras.handle }}</a>
-        {{/ifequal}}
-        
-        {{#ifequal extras.source "instagram"}}
-            <a target="_blank" href="https://instagram.com/{{ extras.handle }}">@{{ extras.handle }}</a>
-        {{/ifequal}}
+        {{ narrator_name }}
     </p>
-    <div class="photo-container" style="background-image: url('{{ path_medium }}');">
-    </div>
-    <audio controls preload class="audio" class = "mobile-layout">
-      <source src="http://www.archive.org/download/LouisArmstrongAllHisStars-struttinWithSomeBarbecue/LouisArmstrongAllHisStars-StruttinWithSomeBarbecue.mp3" type="audio/mpeg" />
+    
+    <p id="social-media-handle" class="desktop-layout">
+        {{ summary }}
+    </p>
+
+    <div class="photo-container" style="background-image: url('https://localground-prod.s3.amazonaws.com/media/vatsala/photos/Shefali4_250.jpg');" />
+
+    <audio controls id="player" class="audio" class="mobile-layout">
+      <source src="https://localground-prod.s3.amazonaws.com/media/vatsala/audio/shefaliroy2hindi_uHn2pb9.mp3" type="audio/mp3" />
     </audio>
 
     <div id="audio-container" class = "desktop-layout">
-        <div id="play" onclick="toggle()"></div>
+        <div id="play"></div>
         <div id="progress">
             <div></div>
         </div>
     </div>
 
-    <div id="social-media-comment">
-        <a href="#" class="more mobile-layout">
-            <h2 class = "food-name">
-                {{ name }}
-            </h2>
-        </a>
-        <!-- Three curly braces if you don't want to escape HTML -->
-        <p class="description desktop-layout">
-            "{{{ caption }}}"
-            <br><br>
-            <!--<a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>-->
-        </p>
-        <span class = "tags">{{ extras.price }}</span>
-        <div class="nav">
-            <a class="carousel-control left previous-place" href="#" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right next-place" href="#" data-slide="next">&rsaquo;</a>
-        </div>
+    <div class="nav">
+        <a class="carousel-control left previous-place" href="#" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right next-place" href="#" data-slide="next">&rsaquo;</a>
     </div>
-    <div class = "about desktop-layout">
-        <a href="../bihar/about.html">About</a>
+
+    <div class="about desktop-layout">
+        <a href="#/explore">Explore</a>
     </div>
 </div>
 

@@ -29,9 +29,10 @@ define([
 
             //fetch data:
             this.collection = new Collection(null, {
-                api_endpoint: 'https://localground.org/api/0/photos/',
-                page_size: 150,
-                project_id: "14"
+                //api_endpoint: 'http://dev.localground.org/api/0/photos/',
+                //page_size: 150,
+                //server_query: "WHERE project = 33"
+                api_endpoint: 'https://localground.org/api/0/datasets/50/data/'
             });
             this.collection.fetch({ reset: true });
 
