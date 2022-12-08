@@ -7,6 +7,7 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
             'zoom-to-marker': 'zoomTo',
             'center-marker': 'centerMarker'
         },
+        
         initialize: function (opts) {
             _.extend(this, opts);
             this.markerOpts = this.markerOpts || {};
@@ -68,7 +69,6 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
         },
 
         zoomTo: function (zoom) {
-            //console.log("zoomTo", zoom);
             this.map.setView(this.getCoords(), zoom, { animation: true });
         },
 

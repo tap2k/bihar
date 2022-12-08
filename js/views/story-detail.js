@@ -3,34 +3,35 @@ define([
     "underscore",
     "handlebars",
     "marionette",
-    "text!../../templates/place-detail.html",
-    "text!../../templates/place-detail-zoom.html",
+    "text!../../templates/story-detail.html",
+    "text!../../templates/story-detail-zoom.html",
     "hammerjs",
     "jquery-hammerjs"
-], function ($, _, Handlebars, Marionette, StoreTemplate, StoreSheetTemplate, Hammer) {
+], function ($, _, Handlebars, Marionette, StoryTemplate, StoryZoomTemplate, Hammer) {
     "use strict";
-    var StoreDetail = Marionette.ItemView.extend({
+    var StoryDetail = Marionette.ItemView.extend({
         events: {
             'click .zoom': 'zoomToMarker',
-            'click .close-btn': 'hideSheet',
+            'click .close-btn': 'closeZoom',
             'click .previous-place': 'previous',
             'click .next-place': 'next',
             'click .previous-place-zoom': 'previous',
             'click .next-place-zoom': 'next',
+            'click .mobile-panel': 'zoomToStory',
             'click #play': 'toggle',
         },
-        template: Handlebars.compile(StoreTemplate),
+        template: Handlebars.compile(StoryTemplate),
         initialize: function (opts) {
             _.extend(this, opts);
             Marionette.ItemView.prototype.initialize.call(this);
             if (this.isFullScreen) {
-                this.template = Handlebars.compile(StoreSheetTemplate);
+                this.template = Handlebars.compile(StoryZoomTemplate);
             } else {
-                this.template = Handlebars.compile(StoreTemplate);
+                this.template = Handlebars.compile(StoryTemplate);
             }
         },
         showSheet: function (e) {
-            if ($(document).width() > 650) { return; }
+            if ($(document).width() > 700) { return; }
             this.app.vent.trigger('load-panel', this.model.get("id"), true);
             if (e) { e.preventDefault(); }
         },
@@ -89,6 +90,14 @@ define([
             this.navigate(url, (i == this.model.collection.length - 1) ? 0 : i + 1);
             if (e) { e.preventDefault(); }
         },
+        zoomToStory: function (e) {
+            this.app.router.navigate("places/zoom/" + this.model.get("id"), {trigger: true});
+            if (e) { e.preventDefault(); }
+        },
+        closeZoom: function (e) {
+            this.app.router.navigate("places/" + this.model.get("id"), {trigger: true});
+            if (e) { e.preventDefault(); }
+        },
         onShow: function () {
             this.model.trigger("center-marker");
         },
@@ -100,7 +109,7 @@ define([
             this.model.trigger('zoom-to-marker', zoom);
             if (e) { e.preventDefault(); }
         },
-        toggle: function () {
+        toggle: function (e) {
             var player = this.$el.find('#player').get(0);
             var play = this.$el.find('#play').get(0);
             if (!player.paused)
@@ -113,12 +122,14 @@ define([
                 play.classList.add("pause");
                 player.play();
             }
+            if (e) { e.preventDefault(); }
         },
-        onTimeUpdate: function(){
+        onTimeUpdate: function(e){
             var percent = this.currentTime/this.duration*100;
             var elem = document.getElementById('progress').children[0];
             elem.style.width = percent + "%";
+            if (e) { e.preventDefault(); }
         }
     });
-    return StoreDetail;
+    return StoryDetail;
 });

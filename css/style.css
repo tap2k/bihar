@@ -72,7 +72,7 @@ h1.represent a:visited,
     margin-bottom: 0;
 }
 
-h1.represent,
+h1.represent, 
 .tapestry-title h1{
     color:white;
     text-shadow: 0 0 3px white;
@@ -128,11 +128,6 @@ h1.represent a:hover {
     line-height: 1.2em;
     margin:20px 14px 4px;
     font-size: 32px;
-}
-
-.story-detail-mobile h2{
-    font-size:24px;
-    margin: 20px 10px 0 10px;
 }
 
 .about-page h1{
@@ -310,22 +305,20 @@ hr.enter {
 
 @media (max-width: 700px) {
 
-    #audio-container{
-        padding: 0 20px 10px 20px;
+    .button-center{
+        text-align:center;
+        padding: 10px;
     }
 
     .nav {
         display: none;
     }
 
-    .tags{
-        padding:10px 10px 30px;
-    }
-
     .map-page{
         background-color:rgba(32,46,84,0.7);
         min-height:100vh;
     }
+
     .about-page h1{
         font-size:24px;
         position:relative;
@@ -351,6 +344,7 @@ hr.enter {
         position: relative;
         left:0;
     }
+
     .splash-title-container > div{
         margin:auto;
     }
@@ -460,7 +454,7 @@ hr.enter {
      z-index: 100;
 }
 
-/********************* Food Detail Page (templates/place-detail.html) *********************/
+/********************* Story Detail Page (templates/story-detail.html) *********************/
 
 .info-box{
     display: none;
@@ -519,34 +513,6 @@ svg {
     margin-top: 20px;
 }
 
-.tag, .tag-outline {
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-}
-
-.tag {
-    cursor: pointer;
-    fill: #203F54;
-}
-
-.tag-outline {
-    fill-opacity: 0;
-    stroke: #203F54;
-    stroke-width: 2;
-}
-
-#narrator-name{
-    margin:10px 24px 24px 24px;
-}
-
-#narrator-name a {
-    color: #585858;
-    font-size: 1em;
-    color: rgba(255,255,255,0.6);
-    padding: 0 14px;
-    text-transform:uppercase;
-}
-
 .description {
     color: white;
     font-size: 1em;
@@ -554,9 +520,17 @@ svg {
     margin: 0;
 }
 
+.description a {
+    color: #585858;
+    font-size: 1em;
+    color: rgba(255,255,255,0.6);
+    padding: 0 14px;
+    text-transform:uppercase;
+}
+
 .button-center{
     text-align:center;
-    padding:50px;
+    padding: 30px;
 }
 
 #left-panel .about{
@@ -571,15 +545,19 @@ svg {
     text-decoration: underline;
 }
 
+.zoom-photo-container{
+    width:100%;
+    height:100%;
+    max-height:67vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 /*********************************** Map larger than 700 ***********************************/
 @media (min-width: 700px) {
 
     .story-detail{
         padding-bottom: 10px;
-    }
-
-    .tags{
-        padding:10px 14px 20px;
     }
 
     .tapestry-title-b{
@@ -623,7 +601,7 @@ svg {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3002874', endColorstr='#b3fd7c00',GradientType=1 );
     }
 
-    #bottom-nav {
+    #bottom-nav{
         width: 100%;
     }
 
@@ -653,14 +631,6 @@ svg {
         position: relative;
     }
 
-    #narrator-name a{
-        padding:0 10px;
-    }
-
-    .description{
-        padding:0 10px 20px;
-    }
-
     .photo-container svg{
         visibility:hidden;
     }
@@ -678,28 +648,20 @@ svg {
         border-style:none;
     }
 
-    .photo-container {
+    .photo-container{
         display: inline-block;
-        height: 150px;
+        height: 100px;
         width: 150px;
         margin:0;
     }
 
-    .carousel-control{
-        top:40%;
+    .mobile-panel{
+        float: right;
+        height:100px;
+        width: calc(100% - 150px);
+        background-color: rgba(32,46,84,0.7);         
     }
-
-    .container>h2{
-        font-size:1.4em;
-    }
-
-    #home-title{
-        font-size:1em;
-    }
-
 }
-
-/**************************** Map mobile sheet ****************************/
 
 .mobile-sheet{
     overflow: hidden;
@@ -707,18 +669,13 @@ svg {
     margin-left:0;
 }
 
-.zoom-photo-container{
-    width:100%;
-    height:100%;
-    max-height:90vw;
-    background-repeat: no-repeat;
-    background-size: cover;
+.mobile-sheet h2{
+    font-size:20px;
+    margin:25px 10px 10px;
 }
 
-@media (min-width: 500px){
-    .zoom-photo-container{
-        max-height:75vw;
-    }
+.mobile-sheet .description{
+    padding: 0 10px 20px;
 }
 
 /**************************** Bottom Navigation ****************************/
@@ -775,7 +732,6 @@ svg {
     left: 15px;
     width: 40px;
     height: 40px;
-    margin-top: -20px;
     font-size: 60px;
     font-weight: 100;
     line-height: 20px;
@@ -796,7 +752,7 @@ svg {
 
 .close-btn {
     right: 4px;
-    top: 15px;
+    top: 6px;
     font-size: 25px;
     line-height: 25px;
     position: absolute;
@@ -814,10 +770,10 @@ svg {
     border-radius: 23px;
     opacity: .7;
     filter: alpha(opacity=70);
+    z-index: 999;
 }
 
 /************************Audio Player ********************************/
-
 
 audio {
   display: none;
@@ -827,20 +783,8 @@ audio {
   color: #EFEFEF;
   text-align: center;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  height: 120px;
-  border-radius: 10px;
   overflow: hidden;
-  max-width: 600px;
-  padding: 10px 50px;
-}
-
-.album {
-  background: url("http://www.jazz.com/assets/2007/12/29/albumcoverLouisArmstrong-HotFivesAndHotSevensVolume3.jpg");
-  background-size: 300px;
-  float: right;
-  height: 300px;
-  width: 300px;
-  margin: -50px;
+  padding: 15px 0 25px;
 }
 
 #progress {

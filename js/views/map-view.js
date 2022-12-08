@@ -10,6 +10,9 @@ define(["marionette",
                 mapboxRegion: ".map",
                 leftPanelRegion: "#left-panel"
             },
+            events: {
+                'click #search-button': 'closeLeftPanel',
+            },
             initialize: function (opts) {
                 _.extend(this, opts);
                 this.opts = opts;
@@ -47,7 +50,11 @@ define(["marionette",
                     this.leftPanelRegion.$el.hide();
                 }
                 this.mapboxRegion.$el.show();
-            }
+            },
+            closeLeftPanel: function () {
+                var elem = document.getElementById('left-panel');
+                elem.style.display = "none";
+            }        
         });
         return MapLayout;
     });
