@@ -29,7 +29,6 @@ define(["marionette",
             },
             loadStoryPanel: function (id, isFullScreen) {
                 var model = this.opts.collection.get(id);
-                console.log("photo = " + model.get("photo"));
                 this.storyView = new StoryDetail({
                     model: model,
                     isFullScreen: isFullScreen,
