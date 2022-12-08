@@ -10,10 +10,10 @@
         {{ narrator_name }}
     </p>
 
-    <div class="zoom-photo-container" style="background-image: url('https://localground-prod.s3.amazonaws.com/media/vatsala/photos/Shefali4_250.jpg');" />
+    <div class="zoom-photo-container" style="background-image: url({{photo}});" />
 
     <audio controls preload id="player" class="audio" class="mobile-layout">
-      <source src="https://localground-prod.s3.amazonaws.com/media/vatsala/audio/shefaliroy2hindi_uHn2pb9.mp3" type="audio/mpeg" />
+      <source src={{audio}} type="audio/mpeg" />
     </audio>
 
     <div id="audio-container" class = "mobile-layout">
@@ -28,8 +28,8 @@
     </div>
 
     <div class="nav mobile-layout">
-        <a class="carousel-control left previous-place-zoom" href="#">&lsaquo;</a>
-        <a class="carousel-control right next-place-zoom" href="#">&rsaquo;</a>
+        <a class="carousel-control left previous-place-zoom mobile-layout" href="#">&lsaquo;</a>
+        <a class="carousel-control right next-place-zoom mobile-layout" href="#">&rsaquo;</a>
     </div>
 
 </div>

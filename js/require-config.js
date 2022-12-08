@@ -1,11 +1,11 @@
 require.config({
     baseUrl: "js",
     paths: {
-        'backbone': '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min',
-        'handlebars': '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min',
-        'jquery': '//code.jquery.com/jquery-2.2.0.min',
-        'jquery.bootstrap': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min',
-        'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.4/backbone.marionette.min',
+        'backbone': '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone-min',
+        'handlebars': '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min',
+        'jquery': '//code.jquery.com/jquery-2.2.4.min',
+        'jquery.bootstrap': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min',
+        'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.7/backbone.marionette.min',
         'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
         'mapbox-lib': '//api.mapbox.com/mapbox.js/v3.3.1/mapbox',
         'marker-clusterer': 'external/leaflet.markercluster-src',

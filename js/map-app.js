@@ -31,7 +31,7 @@ define([
             this.collection = new Collection(null, {
                 api_endpoint: 'https://localground.org/api/0/datasets/50/data/'
             });
-            this.collection.fetch({ reset: true });
+            this.collection.fetch({ reset: true }).then(() => {this.collection.setMediaURLs();});
 
             //initialize views:
             this.mainView = new SplashView({

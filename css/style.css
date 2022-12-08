@@ -502,9 +502,10 @@ hr.enter {
 }
 
 .photo-container { 
-    height: 200px;
+    height: 250px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     margin:10px;
 }
 
@@ -551,6 +552,7 @@ svg {
     max-height:67vw;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
 }
 
 /*********************************** Map larger than 700 ***********************************/
@@ -648,19 +650,23 @@ svg {
         border-style:none;
     }
 
-    .photo-container{
-        display: inline-block;
-        height: 100px;
-        width: 150px;
-        margin:0;
-    }
-
     .mobile-panel{
-        float: right;
+        float: left;
         height:100px;
         width: calc(100% - 150px);
         background-color: rgba(32,46,84,0.7);         
     }
+
+    .photo-container{
+        display: inline-block;
+        height: 100px;
+        width: 150px;
+        margin: 0;
+        background-color: rgba(32,46,84,0.7);  
+        background-position: right;
+        background-size: contain;                
+    }
+
 }
 
 .mobile-sheet{

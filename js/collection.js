@@ -46,6 +46,51 @@ define(["underscore", "backbone", "lib/sqlParser"],
                     model.set("hidden", false);
                 });
                 this.trigger('filter-applied');
+            },
+            setMediaURLs: function ()
+            {
+                var that = this;
+                this.each(function (model) {
+                    that.setPhotoURL(model);
+                    that.setAudioURL(model);
+                });
+            },
+            setAudioURL: function (model) {
+                if (model.attributes.attached_audio.length == 0)
+                {
+                    model.set({audio: ""});
+                    return;
+                }
+                var lg_url = "https://localground.org/api/0/audio/" + model.attributes.attached_audio[0].id + '?format=json';
+                fetch(lg_url)
+                .then((response) => response.json())
+                .then((data) => {
+                    model.set("audio", data.file_path);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            },
+            setPhotoURL: function (model) {
+                var lg_url = null;
+                model.attributes.attached_photos_videos.forEach(function (mediaModel) {
+                    if (mediaModel.overlay_type == "photo")
+                        lg_url = "https://localground.org/api/0/photos/" + mediaModel.id;
+                });
+                if (!lg_url)
+                {
+                    model.set({photo: ""});
+                    return;
+                };
+                lg_url += '?format=json';
+                fetch(lg_url)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        model.set("photo", data.path_medium_sm);
+                    })
+                    .catch((error) => {
+                      console.error('Error:', error);
+                    });
             }
         });
         return Base;
