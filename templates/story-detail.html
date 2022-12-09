@@ -7,43 +7,37 @@
 
     <div class="photo-container" style="background-image: url({{photo}});" />
 
-    <h2 class="desktop-layout">
-        {{ story_title }}
-    </h2>
-    
-    <p class="description desktop-layout">
-        {{ narrator_name }}
-    </p>
-    
-    <p class="description desktop-layout">
-        {{ summary }}
-    </p>
+    <div class="desktop-layout">
 
-    <audio controls preload id="player" class="audio">
-      <source src={{audio}} type="audio/mpeg" />
-    </audio>
+        <h2>{{ story_title }}</h2>
+        
+        <p class="description">{{ narrator_name }}</p>
+        
+        <p class="description">{{ summary }}</p>
 
-    <div id="audio-container" class = "desktop-layout ">
-        <div id="play"></div>
-        <div id="progress">
-            <div></div>
+        <audio controls preload id="player" class="audio">
+            <source src={{audio}} type="audio/mpeg" />
+        </audio>
+
+        <div id="audio-container">
+            <div id="play"></div>
+            <div id="progress"><div></div></div>
         </div>
+
+        <div class = "button-center">
+            <a id="search-button" href="#/explore">Explore</a>
+        </div>
+
+        <div class="nav">
+            <a class="carousel-control left previous-place" href="#" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right next-place" href="#" data-slide="next">&rsaquo;</a>
+        </div>
+
     </div>
 
     <div class="mobile-panel mobile-layout">
             <h2>{{ story_title }}</h2>
-            <p class="description mobile-layout">
-                {{ narrator_name }}
-            </p>
-    </div>
-
-    <div class="nav">
-        <a class="carousel-control left previous-place" href="#" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right next-place" href="#" data-slide="next">&rsaquo;</a>
-    </div>
-    
-    <div class = "button-center desktop-layout">
-        <a id="search-button" href="#/explore">Explore</a>
+            <p class="description">{{ narrator_name }}</p>
     </div>
     
 </div>

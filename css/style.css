@@ -197,11 +197,6 @@ footer{
     vertical-align: middle;
 }
 
-.mobile-layout > h3{
-    text-align: center;
-    padding-right: 10px;
-}
-
 /**************************** Buttons ****************************/
 
 #search-button{
@@ -310,9 +305,9 @@ hr.enter {
         padding: 10px;
     }
 
-    .nav {
+    /*.nav {
         display: none;
-    }
+    }*/
 
     .map-page{
         background-color:rgba(32,46,84,0.7);
@@ -363,12 +358,17 @@ hr.enter {
         width: calc(50vw - 50px);
     }
 
+    .splash-title-container h1{
+        font-size:24px;
+    }
+
     .splash-title-container h2{
         font-size:30px;
     }
 
-    .splash-title-container h1{
-        font-size:24px;
+    .splash-title-container h3{
+        text-align: center;
+        padding-right: 10px;
     }
 }
 
@@ -666,7 +666,6 @@ svg {
         background-position: right;
         background-size: contain;                
     }
-
 }
 
 .mobile-sheet{

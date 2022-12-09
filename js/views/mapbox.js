@@ -43,7 +43,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 //this.map = L.mapbox.map('map', "mapbox.light", {
                 //    zoomControl: false
                 //}).setView(this.opts.center, this.opts.zoom);
-                this.map = L.mapbox.map('map', null, { zoomControl:false })
+                this.map = L.mapbox.map('map', null, { zoomControl:false, attributionControl: false })
                 .setView(this.opts.center, this.opts.zoom)
                 .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v11'));
 

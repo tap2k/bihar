@@ -1,35 +1,31 @@
-<div class="story-detail mobile-sheet">
+<div class="story-detail mobile-sheet mobile-layout">
 
-    <a class="close-btn mobile-layout" href="#">&times;</a>
+    <a class="close-btn" href="#">&times;</a>
 
-    <h2 class="mobile-layout">
-        {{ story_title }}
-    </h2>
+    <h2>{{ story_title }}</h2>
     
-    <p class="description mobile-layout">
-        {{ narrator_name }}
-    </p>
+    <p class="description">{{ narrator_name }}</p>
 
     <div class="zoom-photo-container" style="background-image: url({{photo}});" />
 
-    <audio controls preload id="player" class="audio" class="mobile-layout">
+    <audio controls preload id="player" class="audio">
       <source src={{audio}} type="audio/mpeg" />
     </audio>
 
-    <div id="audio-container" class = "mobile-layout">
+    <div id="audio-container">
         <div id="play"></div>
         <div id="progress">
             <div></div>
         </div>
     </div>
 
-    <div class = "button-center mobile-layout">
+    <div class = "button-center">
         <a id="search-button" href="#/explore">Explore</a>
     </div>
 
-    <div class="nav mobile-layout">
-        <a class="carousel-control left previous-place-zoom mobile-layout" href="#">&lsaquo;</a>
-        <a class="carousel-control right next-place-zoom mobile-layout" href="#">&rsaquo;</a>
+    <div class="nav">
+        <a class="carousel-control left previous-place-zoom" href="#">&lsaquo;</a>
+        <a class="carousel-control right next-place-zoom" href="#">&rsaquo;</a>
     </div>
 
 </div>
