@@ -19,6 +19,7 @@ define([
             'click .next-place-zoom': 'next',
             'click .mobile-panel': 'zoomToStory',
             'click #play': 'toggle',
+            'click .photo-container': 'toggle',
         },
         template: Handlebars.compile(StoryTemplate),
         initialize: function (opts) {
