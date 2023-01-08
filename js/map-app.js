@@ -44,7 +44,7 @@ define([
                 styleID: "lg/cikx1uo6900eh92kl5iy354t1",
                 center: [39.889, -97.114],
                 zoom: 4,
-                disableZoomScroll: true,
+                //disableZoomScroll: true,
                 marker: {
                     clickURL: "places/:id",
                     color: "eb6627",

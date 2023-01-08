@@ -19,19 +19,24 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 this.scrollInterval = 1500;
                 this.attachEventHandlers();
             },
+
             attachEventHandlers: function () {
                 //var that = this;
                 this.listenTo(this.app.vent, 'zoom-to-extents', this.fitMapToLayer);
             },
+
             onShow: function () {
                 this.initMap();
             },
+
             collectionReset: function () {
                 this.renderMarkers();
             },
+
             filterApplied: function () {
                 this.renderMarkers();
             },
+
             initMap: function () {
                 //initialize the map:
                 if (this.initialized) {
@@ -46,6 +51,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 this.map = L.mapbox.map('map', null, { zoomControl:false, attributionControl: false })
                 .setView(this.opts.center, this.opts.zoom)
                 .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v11'));
+                //.addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-v9'));
 
                 this.map.reset = true;
 
@@ -60,8 +66,10 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 if (this.options.disableZoomScroll) {
                     this.map.scrollWheelZoom.disable();
                 }
+
                 this.initialized = true;
             },
+
             highlightMarker: function (id) {
                 this.layer.eachLayer(function (marker) {
                     if (marker.options.id == id) {
@@ -71,9 +79,11 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                     }
                 });
             },
+            
             renderActiveMarker: function () {
                 this.activeMarker = L.marker(this.getCoords(), this.getProperties());
             },
+
             renderMarkers: function () {
                 var itemView,
                     that = this;
