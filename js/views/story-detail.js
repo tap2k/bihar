@@ -19,7 +19,8 @@ define([
             'click .next-place-zoom': 'next',
             'click .mobile-panel': 'zoomToStory',
             'click #play': 'toggle',
-            'click .photo-container': 'toggle',
+            'click #progress': 'seek',
+            //'click .photo-container': 'toggle',
         },
         template: Handlebars.compile(StoryTemplate),
         initialize: function (opts) {
@@ -73,6 +74,9 @@ define([
                 hammerMain.on('swipedown', function () {
                     that.hideSheet();
                 });
+                hammerMain.on('tap', function () {
+                    console.log("tap");
+                });
             }
         },
         navigate: function (url, index) {
@@ -123,6 +127,13 @@ define([
                 play.classList.add("pause");
                 player.play();
             }
+            if (e) { e.preventDefault(); }
+        },
+        seek: function (e) {
+            var player = this.$el.find('#player').get(0);
+            var elem = document.getElementById('progress');
+            var percentage = Math.floor((e.offsetX / elem.offsetWidth) * 100);
+            player.currentTime  = player.duration*(percentage/100);
             if (e) { e.preventDefault(); }
         },
         onTimeUpdate: function(e){
