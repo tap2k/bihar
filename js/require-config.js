@@ -52,7 +52,7 @@ require.config({
         function ($, MapApp) {
             'use strict';
             $(function () {
-                window.location.hash = ''; //make sure the page initializes on the first page...
+                //window.location.hash = ''; //make sure the page initializes on the first page...
                 var mapApp = new MapApp();
                 mapApp.start();
             });

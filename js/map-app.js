@@ -18,10 +18,9 @@ define([
             // Perform the default 'start' functionality
             Marionette.Application.prototype.start.apply(this, [options]);
             this.router = new Router({ app: this});
-            Backbone.history.start();
+            //Backbone.history.start();
         },
         isMobile: function () {
-            //console.log($(document).width());
             return $(document).width() < 700;
         },
         initialize: function (options) {
@@ -31,7 +30,9 @@ define([
             this.collection = new Collection(null, {
                 api_endpoint: 'https://localground.org/api/0/datasets/50/data/'
             });
-            this.collection.fetch({ reset: true }).then(() => {this.collection.setMediaURLs();});
+            this.collection.fetch({ reset: true })
+            .then(() => {this.collection.setMediaURLs()
+                .then(() => {Backbone.history.start();})});
 
             //initialize views:
             this.mainView = new SplashView({

@@ -26,7 +26,6 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 this.count = response.count;
                 this.next = response.next;
                 this.previous = response.previous;
-                //console.log(this.next, this.previous, this.count);
                 return response.results;
             },
             applyFilter: function (sql) {
@@ -41,7 +40,6 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 this.trigger('filter-applied');
             },
             clearFilter: function () {
-                //console.log("clearFilter");
                 this.each(function (model) {
                     model.set("hidden", false);
                 });
@@ -50,28 +48,30 @@ define(["underscore", "backbone", "lib/sqlParser"],
             setMediaURLs: function ()
             {
                 var that = this;
+                var fetches = [];
                 this.each(function (model) {
-                    that.setPhotoURL(model);
-                    that.setAudioURL(model);
+                    that.setPhotoURL(model, fetches);
+                    that.setAudioURL(model, fetches);
                 });
+                return Promise.all(fetches);
             },
-            setAudioURL: function (model) {
+            setAudioURL: function (model, fetches) {
                 if (model.attributes.attached_audio.length == 0)
                 {
                     model.set({audio: ""});
                     return;
                 }
                 var lg_url = "https://localground.org/api/0/audio/" + model.attributes.attached_audio[0].id + '?format=json';
-                fetch(lg_url)
+                fetches.push(fetch(lg_url)
                 .then((response) => response.json())
                 .then((data) => {
                     model.set("audio", data.file_path);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                });
+                }));
             },
-            setPhotoURL: function (model) {
+            setPhotoURL: function (model, fetches) {
                 var lg_url = null;
                 model.attributes.attached_photos_videos.forEach(function (mediaModel) {
                     if (mediaModel.overlay_type == "photo")
@@ -83,14 +83,14 @@ define(["underscore", "backbone", "lib/sqlParser"],
                     return;
                 };
                 lg_url += '?format=json';
-                fetch(lg_url)
+                fetches.push(fetch(lg_url)
                     .then((response) => response.json())
                     .then((data) => {
                         model.set("photo", data.path_medium_sm);
                     })
                     .catch((error) => {
                       console.error('Error:', error);
-                    });
+                    }));
             }
         });
         return Base;
