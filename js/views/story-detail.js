@@ -60,7 +60,7 @@ define([
                 div = this.$el.find('.zoom-photo-container').get(0);
             }
             if (div) {
-                hammerMain = new Hammer(div);
+                hammerMain = new Hammer(div, {inputClass: Hammer.TouchInput});
                 hammerMain.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
                 hammerMain.on('swipeleft', function () {
                     that.next();
@@ -73,9 +73,6 @@ define([
                 });
                 hammerMain.on('swipedown', function () {
                     that.hideSheet();
-                });
-                hammerMain.on('tap', function () {
-                    console.log("tap");
                 });
             }
         },
