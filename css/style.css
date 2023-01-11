@@ -158,6 +158,11 @@ p {
     margin:20px 0 0;
 }
 
+.about-content a{
+    color:white;
+    font-weight: bold;
+}
+
 .about-content{
     margin: 0 auto;
     position: relative;
