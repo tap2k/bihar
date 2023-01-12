@@ -14,6 +14,8 @@ define([
         },
         storyDetailFullScreen: function (id) {
             this.app.vent.trigger("load-panel", id, true);
+            this.app.mainRegion.$el.hide();
+            this.app.mapRegion.$el.show();
         },
         home: function () {
             this.app.mainRegion.$el.show();

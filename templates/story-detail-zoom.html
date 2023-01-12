@@ -6,6 +6,8 @@
     
     <p class="description">{{ narrator_name }}</p>
 
+    <p class="description">{{ summary }}</p>
+
     <div class="zoom-photo-container" style="background-image: url({{photo}});" />
 
     <audio controls preload id="player" class="audio">
@@ -19,13 +21,13 @@
         </div>
     </div>
 
-    <div class = "button-center">
-        <a id="search-button" href="#/explore">Explore</a>
-    </div>
-
     <div class="nav">
         <a class="carousel-control left previous-place-zoom" href="#">&lsaquo;</a>
         <a class="carousel-control right next-place-zoom" href="#">&rsaquo;</a>
+    </div>
+
+    <div class = "button-center">
+        <a id="search-button" href="#/explore">Explore</a>
     </div>
 
 </div>
