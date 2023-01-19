@@ -54,7 +54,8 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
         getProperties: function () {
             return {
                 id: this.model.get("id"),
-                name: this.model.get("name"),
+                title: this.model.get("story_title"),
+                //photo: this.model.get("photo"),
                 "icon": this.icon,
                 "originalIcon": this.icon,
                 "highlightIcon": this.highlightIcon
@@ -71,11 +72,11 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
         },
 
         markerOver: function (e) {
-            console.log("marker name = " + e.target.options.name);
+            //console.log("marker title = " + e.target.options.title);
         },
 
         markerOut: function (e) {
-            console.log("marker ID = " + e.target.options.id);
+            //console.log("marker ID = " + e.target.options.id);
         },
 
         zoomTo: function (zoom) {
