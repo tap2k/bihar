@@ -14,6 +14,8 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
             this.initIcons();
             this.marker = L.marker(this.getCoords(), this.getProperties());
             this.marker.on('click', this.markerClick.bind(this));
+            this.marker.on('mouseover', this.markerOver.bind(this));
+            this.marker.on('mouseout', this.markerOut.bind(this));
         },
 
         initIcons: function () {
@@ -66,6 +68,14 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
                 url = url.replace(":id", id);
                 window.location.hash = "#/" + url;
             }
+        },
+
+        markerOver: function (e) {
+            console.log("marker name = " + e.target.options.name);
+        },
+
+        markerOut: function (e) {
+            console.log("marker ID = " + e.target.options.id);
         },
 
         zoomTo: function (zoom) {

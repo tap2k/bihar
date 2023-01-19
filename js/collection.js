@@ -56,7 +56,7 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 return Promise.all(fetches);
             },
             setAudioURL: function (model, fetches) {
-                if (model.attributes.attached_audio.length == 0)
+                if (!model.attributes.attached_audio || model.attributes.attached_audio.length == 0)
                 {
                     model.set({audio: ""});
                     return;
