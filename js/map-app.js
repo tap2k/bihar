@@ -59,6 +59,11 @@ define([
                         iconSize: [100, 100],
                         iconAnchor: [50, 50]
                     },
+                    clusterIcon: {
+                        iconUrl: 'assets/iconcluster.png',
+                        iconSize: [50, 50],
+                        iconAnchor: [25, 25]
+                    },
                     zoomLevelDetail: 16 //14
                 }
             });

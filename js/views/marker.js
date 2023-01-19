@@ -13,9 +13,11 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
             this.markerOpts = this.markerOpts || {};
             this.initIcons();
             this.marker = L.marker(this.getCoords(), this.getProperties());
+            this.marker.bindTooltip(this.model.get("story_title"), {className: 'myTooltip'});
+            //this.marker.bindTooltip(this.model.get("story_title"));
             this.marker.on('click', this.markerClick.bind(this));
-            this.marker.on('mouseover', this.markerOver.bind(this));
-            this.marker.on('mouseout', this.markerOut.bind(this));
+            //this.marker.on('mouseover', this.markerOver.bind(this));
+            //this.marker.on('mouseout', this.markerOut.bind(this));
         },
 
         initIcons: function () {
@@ -54,7 +56,7 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
         getProperties: function () {
             return {
                 id: this.model.get("id"),
-                title: this.model.get("story_title"),
+                //title: this.model.get("story_title"),
                 //photo: this.model.get("photo"),
                 "icon": this.icon,
                 "originalIcon": this.icon,
@@ -71,13 +73,13 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
             }
         },
 
-        markerOver: function (e) {
-            //console.log("marker title = " + e.target.options.title);
+        /*markerOver: function (e) {
+            console.log("marker title = " + e.target.options.title);
         },
 
         markerOut: function (e) {
-            //console.log("marker ID = " + e.target.options.id);
-        },
+            console.log("marker ID = " + e.target.options.id);
+        },*/
 
         zoomTo: function (zoom) {
             this.map.setView(this.getCoords(), zoom, { animation: true });

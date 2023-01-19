@@ -65,3 +65,15 @@
 .marker-cluster span {
 	line-height: 30px;
 }
+
+.myTooltip {
+	background: #8acfa3;
+	border: 2px solid #c6d8cb;
+	color: #444444;
+  }
+  .leaflet-tooltip-left.myTooltip::before {
+	border-left-color: #c6d8cb;
+  }
+  .leaflet-tooltip-right.myTooltip::before {
+	border-right-color: #c6d8cb;
+  }
