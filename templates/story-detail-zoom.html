@@ -2,16 +2,16 @@
 
     <a class="close-btn" href="#">&times;</a>
 
-    <h2>{{ story_title }}</h2>
+    <h2>{{ title }}</h2>
     
-    <p class="description">{{ narrator_name }}</p>
+    <p class="description">{{ narrator }}</p>
 
     <p class="description">{{ summary }}</p>
 
-    <div class="zoom-photo-container" style="background-image: url({{photo}});" />
+    <div class="zoom-photo-container" style="background-image: url({{imageURL}});" />
 
     <audio controls preload id="player" class="audio">
-      <source src={{audio}} type="audio/mpeg" />
+      <source src={{audioURL}} type="audio/mpeg" />
     </audio>
 
     <div id="audio-container">

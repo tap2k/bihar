@@ -5,18 +5,18 @@
         </h1>
     </div>
 
-    <div class="photo-container"  style="background-image: url({{photo}});" />
+    <div class="photo-container"  style="background-image: url({{imageURL}});" />
 
     <div class="desktop-layout">
 
-        <h2>{{ story_title }}</h2>
+        <h2>{{ title }}</h2>
         
-        <p class="description">{{ narrator_name }}</p>
+        <p class="description">{{ name }}</p>
         
         <p class="description">{{ summary }}</p>
 
         <audio controls preload id="player" class="audio">
-            <source src={{audio}} type="audio/mpeg" />
+            <source src={{audioURL}} type="audio/mpeg" />
         </audio>
 
         <div id="audio-container">
@@ -36,8 +36,8 @@
     </div>
 
     <div class="mobile-panel mobile-layout">
-            <h2>{{ story_title }}</h2>
-            <p class="description">{{ narrator_name }}</p>
+        <h2>{{ title }}</h2>
+        <p class="description">{{ narrator }}</p>
     </div>
     
 </div>

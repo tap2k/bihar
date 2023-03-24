@@ -58,7 +58,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 //add logo:
                 var logoControl = L.control.attribution({ position: "bottomright" });
                 //Powered by
-                logoControl.setPrefix('<a class="lg" href="http://localground.org" target="_blank"><img class="lg-logo" src="assets/lg-logo-circle-100.png" /></a>');
+                //logoControl.setPrefix('<a class="lg" href="http://localground.org" target="_blank"><img class="lg-logo" src="assets/lg-logo-circle-100.png" /></a>');
                 logoControl.addTo(this.map);
 
                 //add zoom:

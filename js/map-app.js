@@ -28,12 +28,12 @@ define([
 
             //fetch data:
             this.collection = new Collection(null, {
-                api_endpoint: 'https://localground.org/api/0/datasets/50/data/'
+                baseURL: 'http://localhost:1337',
+                endpoint: '/api/getContentForChannel?uniqueID=bihar',
             });
             this.collection.fetch({ reset: true })
-            .then(() => {this.collection.setMediaURLs()
-                .then(() => {Backbone.history.start();})});
-
+                .then(() => {this.collection.setMediaURLs(); Backbone.history.start()});
+            
             //initialize views:
             this.mainView = new SplashView({
                 app: this
@@ -41,14 +41,14 @@ define([
             this.mapView = new MapView({
                 collection: this.collection,
                 app: this,
-                accessToken: "pk.eyJ1IjoibGciLCJhIjoibWd5aTl2VSJ9.W9ZsT1zQsI9ZP72KtTdZTA",
-                styleID: "lg/cikx1uo6900eh92kl5iy354t1",
+                //accessToken: "pk.eyJ1IjoibGciLCJhIjoibWd5aTl2VSJ9.W9ZsT1zQsI9ZP72KtTdZTA",
+                //styleID: "lg/cikx1uo6900eh92kl5iy354t1",
                 center: [39.889, -97.114],
                 zoom: 4,
                 //disableZoomScroll: true,
                 marker: {
                     clickURL: "places/:id",
-                    color: "eb6627",
+                    //color: "eb6627",
                     icon: {
                         iconUrl: 'assets/iconselected.png',
                         iconSize: [50, 50],
@@ -71,7 +71,7 @@ define([
             //load views into regions:
             this.mainRegion.show(this.mainView);
             this.mapRegion.show(this.mapView);
-        }
+        },
     });
     return MapApp;
 });

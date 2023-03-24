@@ -13,16 +13,14 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
             this.markerOpts = this.markerOpts || {};
             this.initIcons();
             this.marker = L.marker(this.getCoords(), this.getProperties());
-            this.marker.bindTooltip(this.model.get("story_title"), {className: 'myTooltip'});
-            //this.marker.bindTooltip(this.model.get("story_title"));
+            this.marker.bindTooltip(this.model.get("title"), {className: 'myTooltip'});
             this.marker.on('click', this.markerClick.bind(this));
             //this.marker.on('mouseover', this.markerOver.bind(this));
             //this.marker.on('mouseout', this.markerOut.bind(this));
         },
 
         initIcons: function () {
-            var factor = 1.5,
-                baseIconURL = 'https://api.mapbox.com/v4/marker/';
+            var factor = 1.5, baseIconURL = 'https://api.mapbox.com/v4/marker/';
             if (this.markerOpts.color) {
                 this.model.set("color", this.markerOpts.color);
             }
@@ -48,16 +46,15 @@ define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marion
 
         getCoords: function () {
             return [
-                this.model.get("geometry").coordinates[1],
-                this.model.get("geometry").coordinates[0]
+                this.model.get("lat"),
+                this.model.get("long")
             ];
         },
 
         getProperties: function () {
             return {
                 id: this.model.get("id"),
-                //title: this.model.get("story_title"),
-                //photo: this.model.get("photo"),
+                title: this.model.get("title"),
                 "icon": this.icon,
                 "originalIcon": this.icon,
                 "highlightIcon": this.highlightIcon
