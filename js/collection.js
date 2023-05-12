@@ -13,8 +13,8 @@ define(["underscore", "backbone"],
             {
                 var that = this;
                 this.each(function (model) {
-                    model.set("imageURL", (that.baseURL + model.get("image").url));
-                    model.set("audioURL", (that.baseURL + model.get("audio").url));
+                    model.set("imageURL", (that.baseURL + model.get("thumbnail").url));
+                    model.set("audioURL", (that.baseURL + model.get("mediafile").url));
                 });
             }
         });
