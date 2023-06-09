@@ -28,7 +28,8 @@ define([
 
             //fetch data:
             this.collection = new Collection(null, {
-                baseURL: 'https://mvc.represent.org/strapi',
+                //baseURL: 'https://mvc.represent.org/strapi',
+                baseURL: 'http://localhost:1337',
                 endpoint: '/api/getContentForChannel?uniqueID=bihar',
             });
             this.collection.fetch({ reset: true })
