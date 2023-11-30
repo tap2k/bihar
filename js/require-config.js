@@ -1,9 +1,9 @@
 require.config({
     baseUrl: "js",
     paths: {
-        'backbone': '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone-min',
-        'handlebars': '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min',
-        'jquery': '//code.jquery.com/jquery-2.2.4.min',
+        'backbone': '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.5.0/backbone-min',
+        'handlebars': '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min',
+        'jquery': '//code.jquery.com/jquery-3.4.1.min',
         'jquery.bootstrap': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min',
         'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.7/backbone.marionette.min',
         'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
