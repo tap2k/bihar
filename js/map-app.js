@@ -30,7 +30,7 @@ define([
             this.collection = new Collection(null, {
                 baseURL: 'https://mvc.represent.org/strapi',
                 //baseURL: 'http://localhost:1337',
-                endpoint: '/api/getContentForChannel?uniqueID=bihar',
+                endpoint: '/api/getContentForChannel?uniqueID=gujarat',
             });
             this.collection.fetch({ reset: true })
                 .then(() => {this.collection.setMediaURLs(); Backbone.history.start()});

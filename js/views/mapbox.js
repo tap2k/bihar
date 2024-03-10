@@ -111,7 +111,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
 
             fitMapToLayer: function () {
                 if (this.layer) {
-                    this.map.fitBounds(this.layer.getBounds());
+                    this.map.fitBounds(this.layer.getBounds(), {padding: [100, 100]});
                     this.layer.eachLayer(function (marker) {
                         marker.setIcon(marker.options.originalIcon);
                     });
