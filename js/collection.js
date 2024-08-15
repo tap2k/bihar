@@ -15,9 +15,9 @@ define(["underscore", "backbone"],
                 this.each(function (model) {
                     //model.set("imageURL", (that.baseURL + model.get("thumbnail").url));
                     //model.set("audioURL", (that.baseURL + model.get("mediafile").url));
-                    let imageurl = model.get("thumbnail").formats.large ? model.get("thumbnail").formats.large.url : model.get("thumbnail").url;
+                    let imageurl = model.get("mediafile").formats.large ? model.get("mediafile").formats.large.url : model.get("mediafile").url;
                     model.set("imageURL", imageurl);
-                    model.set("audioURL", (model.get("mediafile").url));
+                    model.set("audioURL", (model.get("audiofile").url));
                 });
             }
         });
