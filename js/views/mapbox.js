@@ -98,7 +98,16 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 });
                 //this.layer = new L.FeatureGroup();
                 this.collection.each(function (model) {
-                    itemView = new MarkerView({
+                    const lat = model.get("lat");
+                    const long = model.get("long");
+                
+                    if (lat == null || long == null) {
+                        //console.warn("Skipping model with missing coordinates:", model);
+                        return; // Skip this model
+                    }
+                
+                    // Proceed with creating the marker
+                    const itemView = new MarkerView({
                         map: that.map,
                         model: model,
                         token: that.opts.accessToken,
